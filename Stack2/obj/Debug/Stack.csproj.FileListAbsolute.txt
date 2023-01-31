@@ -9,3 +9,15 @@ C:\Users\igor\Documents\GitHub\Stack2\Stack2\Stack2\obj\Debug\Stack.csproj.Gener
 C:\Users\igor\Documents\GitHub\Stack2\Stack2\Stack2\obj\Debug\Stack.csproj.CoreCompileInputs.cache
 C:\Users\igor\Documents\GitHub\Stack2\Stack2\Stack2\obj\Debug\Stack2.exe
 C:\Users\igor\Documents\GitHub\Stack2\Stack2\Stack2\obj\Debug\Stack2.pdb
+C:\Users\igor\Documents\GitHub\Stack2\Stack2\bin\Debug\Stack2.exe.config
+C:\Users\igor\Documents\GitHub\Stack2\Stack2\bin\Debug\Stack2.exe
+C:\Users\igor\Documents\GitHub\Stack2\Stack2\bin\Debug\Stack2.pdb
+C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack.csproj.AssemblyReference.cache
+C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.frmEditStav.resources
+C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.frmLogin.resources
+C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.frmMain.resources
+C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.Properties.Resources.resources
+C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack.csproj.GenerateResource.cache
+C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack.csproj.CoreCompileInputs.cache
+C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.exe
+C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.pdb

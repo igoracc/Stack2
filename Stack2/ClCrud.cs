@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Sql;
 using System.Data;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Stack2
 {
@@ -14,6 +16,7 @@ namespace Stack2
 
         private static SqlConnection dbCon = new SqlConnection();
         private static string constr = @"Server=WORKSTATION\SQL;Database=IGIS;User Id = igor; Password=1234567;";
+        private Boolean fillStart;
 
         public void OpenConnection()
         {
@@ -117,6 +120,102 @@ namespace Stack2
                 throw ex;
             }
         }
+
+
+        public long AddEditItem (int modus,long CategoryID, long LanguageID, string Name, string Details, string Tags,string HyperLink, int IsImage = 0 , long ID = 0 )
+        {
+
+             long n = 0;
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = dbCon;
+
+            if (modus == 1)
+            {
+
+
+                cmd.CommandText = @"INSERT INTO [dbo].[Items]
+                                                       ([CategoryID]
+                                                       ,[LanguageID]
+                                                       ,[Name]
+                                                       ,[Details]
+                                                       ,[Tags]
+                                                       ,[HyperLink]
+                                                       ,[Hidden]
+                                                       ,[IsImage])
+                                                         VALUES  (
+
+                                                        @CategoryID,
+                                                        @LanguageID,
+                                                        @Name,
+                                                        @Details,
+                                                        @Tags,
+                                                        @HyperLink,
+                                                        0,
+                                                        @IsImage
+                                                        );
+
+                                    SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY];  
+
+            ";
+
+            }
+            else
+            {
+
+                cmd.CommandText = @"UPDATE  [Items] SET
+                                                       [CategoryID] = @CategoryID,
+                                                       [LanguageID] = @LanguageID,
+                                                       [Name]       = @Name,
+                                                       [Details]    = @Details,
+                                                       [Tags]       = @Tags,
+                                                       [HyperLink]  = @HyperLink,
+                                                       [IsImage]    = @IsImage
+
+                                    WHERE ID = @ID 
+                        ";
+
+                cmd.Parameters.AddWithValue("@ID", ID);
+            }
+
+
+
+            cmd.Parameters.AddWithValue("@CategoryID", CategoryID);
+            cmd.Parameters.AddWithValue("@LanguageID", LanguageID);
+            cmd.Parameters.AddWithValue("@Name", Name);
+            cmd.Parameters.AddWithValue("@Details", Details);
+            cmd.Parameters.AddWithValue("@Tags", Tags);
+            cmd.Parameters.AddWithValue("@HyperLink", HyperLink);
+            cmd.Parameters.AddWithValue("@IsImage", IsImage);
+
+
+            try
+            {
+                if (modus == 1)
+                {
+                    n = Convert.ToUInt32(cmd.ExecuteScalar());
+                }
+                else
+                {
+                    cmd.ExecuteNonQuery();  
+                }
+
+               // n = 1;
+            }
+            catch (Exception)
+            {
+                n = 0;
+                //throw;
+            }
+
+            return n;
+
+
+
+
+        }
+
+
 
 
     }
