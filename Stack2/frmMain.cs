@@ -190,7 +190,7 @@ namespace Stack2
             frmEditStav fr = new frmEditStav();
 
             fr.LanguageID = LangId;
-            fr.CtegoryId = categoryID;
+            fr.CategoryId = categoryID;
             fr.modus = 1;
 
             fr.ShowDialog();
@@ -205,7 +205,7 @@ namespace Stack2
             frmEditStav fr = new frmEditStav();
 
             fr.LanguageID = LangId;
-            fr.CtegoryId = categoryID;
+            fr.CategoryId = categoryID;
             fr.modus = 2;
 
             fr.ItemID = ItemId;
@@ -241,6 +241,13 @@ namespace Stack2
         private void rbDate_CheckedChanged(object sender, EventArgs e)
         {
             button1_Click(this, e);
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+
+            clCrud.UpdateItem(txtDetails.Text, txtTags.Text, ItemId);
+
         }
 
         private void getItems(long CategoryID = 0,  long findID=0)

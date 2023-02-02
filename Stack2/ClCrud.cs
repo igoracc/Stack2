@@ -8,6 +8,7 @@ using System.Data.Sql;
 using System.Data;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Windows.Forms;
 
 namespace Stack2
 {
@@ -215,8 +216,49 @@ namespace Stack2
 
         }
 
+        public void MessageShow( string messagetxt)
+        {
+            MessageBox.Show(messagetxt);
+        }
 
 
+        public long UpdateItem( string Details, string Tags,  long ID)
+        {
+            long n = 1;
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = dbCon;
+
+
+                cmd.CommandText = @"UPDATE  [Items] SET
+
+                                                       [Details]    = @Details,
+                                                       [Tags]       = @Tags
+
+                                    WHERE ID = @ID 
+                        ";
+
+                cmd.Parameters.AddWithValue("@ID", ID);
+
+
+            cmd.Parameters.AddWithValue("@Details", Details);
+            cmd.Parameters.AddWithValue("@Tags", Tags);
+
+
+            try
+            {
+                    cmd.ExecuteNonQuery();
+ 
+            }
+            catch (Exception)
+            {
+                n = 0;
+                //throw;
+            }
+
+            return n;
+
+        }
 
     }
 }
