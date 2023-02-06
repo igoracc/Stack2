@@ -50,6 +50,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtDetails = new FastColoredTextBoxNS.FastColoredTextBox();
             this.txtTags = new System.Windows.Forms.TextBox();
             this.dgItems = new System.Windows.Forms.DataGridView();
             this.ID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,17 +60,16 @@
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsCategories = new System.Windows.Forms.BindingSource(this.components);
-            this.txtDetails = new FastColoredTextBoxNS.FastColoredTextBox();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCategories)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -133,8 +133,9 @@
             this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(49, 22);
-            this.toolStripButton6.Text = "Add";
+            this.toolStripButton6.Size = new System.Drawing.Size(78, 22);
+            this.toolStripButton6.Text = "Open link";
+            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
             // toolStripButton5
             // 
@@ -282,6 +283,46 @@
             this.panel2.Size = new System.Drawing.Size(1249, 578);
             this.panel2.TabIndex = 3;
             // 
+            // txtDetails
+            // 
+            this.txtDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDetails.AutoCompleteBracketsList = new char[] {
+        '(',
+        ')',
+        '{',
+        '}',
+        '[',
+        ']',
+        '\"',
+        '\"',
+        '\'',
+        '\''};
+            this.txtDetails.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;=]+);\r\n^\\s*(case|default)\\s*[^:" +
+    "]*(?<range>:)\\s*(?<range>[^;]+);\r\n";
+            this.txtDetails.AutoScrollMinSize = new System.Drawing.Size(27, 14);
+            this.txtDetails.BackBrush = null;
+            this.txtDetails.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
+            this.txtDetails.CharHeight = 14;
+            this.txtDetails.CharWidth = 8;
+            this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtDetails.IsReplaceMode = false;
+            this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
+            this.txtDetails.LeftBracket = '(';
+            this.txtDetails.LeftBracket2 = '{';
+            this.txtDetails.Location = new System.Drawing.Point(361, 3);
+            this.txtDetails.Name = "txtDetails";
+            this.txtDetails.Paddings = new System.Windows.Forms.Padding(0);
+            this.txtDetails.RightBracket = ')';
+            this.txtDetails.RightBracket2 = '}';
+            this.txtDetails.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.txtDetails.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("txtDetails.ServiceColors")));
+            this.txtDetails.Size = new System.Drawing.Size(885, 546);
+            this.txtDetails.TabIndex = 4;
+            this.txtDetails.Zoom = 100;
+            // 
             // txtTags
             // 
             this.txtTags.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -373,47 +414,6 @@
             // 
             this.bsCategories.PositionChanged += new System.EventHandler(this.bsCategories_PositionChanged);
             // 
-            // txtDetails
-            // 
-            this.txtDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDetails.AutoCompleteBracketsList = new char[] {
-        '(',
-        ')',
-        '{',
-        '}',
-        '[',
-        ']',
-        '\"',
-        '\"',
-        '\'',
-        '\''};
-            this.txtDetails.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;=]+);\r\n^\\s*(case|default)\\s*[^:" +
-    "]*(?<range>:)\\s*(?<range>[^;]+);\r\n";
-            this.txtDetails.AutoScrollMinSize = new System.Drawing.Size(27, 14);
-            this.txtDetails.BackBrush = null;
-            this.txtDetails.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
-            this.txtDetails.CharHeight = 14;
-            this.txtDetails.CharWidth = 8;
-            this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txtDetails.Font = new System.Drawing.Font("Courier New", 9.75F);
-            this.txtDetails.IsReplaceMode = false;
-            this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
-            this.txtDetails.LeftBracket = '(';
-            this.txtDetails.LeftBracket2 = '{';
-            this.txtDetails.Location = new System.Drawing.Point(361, 3);
-            this.txtDetails.Name = "txtDetails";
-            this.txtDetails.Paddings = new System.Windows.Forms.Padding(0);
-            this.txtDetails.RightBracket = ')';
-            this.txtDetails.RightBracket2 = '}';
-            this.txtDetails.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.txtDetails.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("txtDetails.ServiceColors")));
-            this.txtDetails.Size = new System.Drawing.Size(885, 546);
-            this.txtDetails.TabIndex = 4;
-            this.txtDetails.Zoom = 100;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,11 +436,11 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCategories)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

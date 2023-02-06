@@ -250,6 +250,17 @@ namespace Stack2
 
         }
 
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            string linkDesc = "";
+
+            linkDesc = clCrud.GetValue("HyperLink", "Items", "ID", ItemId.ToString(), "").ToString();
+
+            MessageBox.Show(linkDesc.ToString());
+
+
+        }
+
         private void getItems(long CategoryID = 0,  long findID=0)
         {
 

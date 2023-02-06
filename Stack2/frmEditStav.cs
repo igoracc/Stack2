@@ -33,6 +33,21 @@ namespace Stack2
         private void button1_Click(object sender, EventArgs e)
         {
 
+            if (txtName.Text == "")
+            {
+                MessageBox.Show("There is no name inserted!!");
+                return; 
+            }
+
+
+            if (txtTags.Text == "")
+            {
+                MessageBox.Show("There is no tags!!");
+                return;
+            }
+
+
+
             CategoryId = Convert.ToInt64(clCrud.ExecuteScalarSQL("  SELECT ID FROM Categories WHERE name = '" + cboCategory.Text + "' AND Hidden = 0"));
 
             if (CategoryId == 0 )
@@ -40,6 +55,7 @@ namespace Stack2
                 /// CategoryId = Convert.ToInt64( clCrud.ExecuteScalarSQL("INSERT"  );
 
                 MessageBox.Show("There is no category in selected");
+
 
             }
 

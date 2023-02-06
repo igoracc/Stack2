@@ -9,6 +9,7 @@ using System.Data;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace Stack2
 {
@@ -16,11 +17,46 @@ namespace Stack2
     {
 
         private static SqlConnection dbCon = new SqlConnection();
-        private static string constr = @"Server=WORKSTATION\SQL;Database=IGIS;User Id = igor; Password=1234567;";
+        private static string constr = "";
         private Boolean fillStart;
 
-        public void OpenConnection()
+
+
+        public void setConstr()
         {
+            //  constr = @"Server=WORKSTATION\SQL;Database=IGIS;User Id = igor; Password=1234567;";
+            constr = ReadRegistry("constr");
+
+        }
+
+
+        public string ReadRegistry(string RegKeyName)
+        {
+            string valueOfKey = "";
+
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\IGIS");
+
+            //if it does exist, retrieve the stored values  
+            if (key != null)
+            {
+                valueOfKey = key.GetValue(RegKeyName).ToString();
+                key.Close();
+            }
+            return valueOfKey;
+
+        }
+
+
+
+
+
+
+    public void OpenConnection()
+        {
+
+            setConstr();
+
+
             dbCon = new SqlConnection(constr);
 
             try
@@ -259,6 +295,30 @@ namespace Stack2
             return n;
 
         }
+
+
+        public object GetValue( string field, string table, string searchField, string searchValue, object defaultValue)
+        {
+            object OutVal = null;
+
+            string sq = @"SELECT  " + field + " FROM " + table + " WHERE " + searchField + " = " + searchValue + " ";
+
+            try
+            {
+                OutVal = ExecuteScalarSQL(sq).ToString();
+            }
+            catch (Exception)
+            {
+                OutVal = defaultValue;
+            }
+
+            return OutVal;
+
+        }
+
+
+
+
 
     }
 }
