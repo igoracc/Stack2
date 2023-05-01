@@ -35,9 +35,11 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.categories = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsBtnImage = new System.Windows.Forms.ToolStripButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -55,10 +57,12 @@
             this.dgItems = new System.Windows.Forms.DataGridView();
             this.ID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsItems = new System.Windows.Forms.BindingSource(this.components);
+            this.img = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgCategory = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bsItems = new System.Windows.Forms.BindingSource(this.components);
             this.bsCategories = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -67,8 +71,9 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCategories)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,9 +84,11 @@
             this.toolStripButton2,
             this.toolStripButton1,
             this.toolStripSeparator1,
-            this.toolStripButton4,
+            this.btnSave,
             this.toolStripButton6,
-            this.toolStripButton5});
+            this.categories,
+            this.toolStripSeparator2,
+            this.tsBtnImage});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1249, 25);
@@ -119,14 +126,14 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton4
+            // btnSave
             // 
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(65, 22);
-            this.toolStripButton4.Text = "Update";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(65, 22);
+            this.btnSave.Text = "Update";
+            this.btnSave.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // toolStripButton6
             // 
@@ -137,13 +144,29 @@
             this.toolStripButton6.Text = "Open link";
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
-            // toolStripButton5
+            // categories
             // 
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(49, 22);
-            this.toolStripButton5.Text = "Add";
+            this.categories.Image = ((System.Drawing.Image)(resources.GetObject("categories.Image")));
+            this.categories.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.categories.Name = "categories";
+            this.categories.Size = new System.Drawing.Size(49, 22);
+            this.categories.Text = "Add";
+            this.categories.Click += new System.EventHandler(this.toolStripButton5_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tsBtnImage
+            // 
+            this.tsBtnImage.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnImage.Image")));
+            this.tsBtnImage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnImage.Name = "tsBtnImage";
+            this.tsBtnImage.Size = new System.Drawing.Size(60, 22);
+            this.tsBtnImage.Text = "Image";
+            this.tsBtnImage.Visible = false;
+            this.tsBtnImage.Click += new System.EventHandler(this.tsBtnImage_Click);
             // 
             // txtSearch
             // 
@@ -278,6 +301,7 @@
             this.panel2.Controls.Add(this.txtTags);
             this.panel2.Controls.Add(this.dgItems);
             this.panel2.Controls.Add(this.dgCategory);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(0, 73);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1249, 578);
@@ -322,6 +346,7 @@
             this.txtDetails.Size = new System.Drawing.Size(885, 546);
             this.txtDetails.TabIndex = 4;
             this.txtDetails.Zoom = 100;
+            this.txtDetails.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDetails_KeyDown);
             // 
             // txtTags
             // 
@@ -342,7 +367,8 @@
             this.dgItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID1,
-            this.ItemName});
+            this.ItemName,
+            this.img});
             this.dgItems.DataSource = this.bsItems;
             this.dgItems.Location = new System.Drawing.Point(182, 3);
             this.dgItems.Name = "dgItems";
@@ -350,6 +376,7 @@
             this.dgItems.RowHeadersWidth = 5;
             this.dgItems.Size = new System.Drawing.Size(173, 575);
             this.dgItems.TabIndex = 1;
+            this.dgItems.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgItems_DataError);
             this.dgItems.SelectionChanged += new System.EventHandler(this.dgItems_SelectionChanged_1);
             // 
             // ID1
@@ -368,10 +395,13 @@
             this.ItemName.Name = "ItemName";
             this.ItemName.ReadOnly = true;
             // 
-            // bsItems
+            // img
             // 
-            this.bsItems.CurrentChanged += new System.EventHandler(this.bsItems_CurrentChanged);
-            this.bsItems.PositionChanged += new System.EventHandler(this.bsItems_PositionChanged);
+            this.img.DataPropertyName = "isImage";
+            this.img.HeaderText = "IsImage";
+            this.img.Name = "img";
+            this.img.ReadOnly = true;
+            this.img.Visible = false;
             // 
             // dgCategory
             // 
@@ -392,6 +422,7 @@
             this.dgCategory.Size = new System.Drawing.Size(173, 575);
             this.dgCategory.TabIndex = 0;
             this.dgCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCategory_CellContentClick);
+            this.dgCategory.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgCategory_DataError);
             this.dgCategory.SelectionChanged += new System.EventHandler(this.dgCategory_SelectionChanged);
             // 
             // id
@@ -410,8 +441,27 @@
             this.Nam.Name = "Nam";
             this.Nam.ReadOnly = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(361, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(885, 546);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // bsItems
+            // 
+            this.bsItems.CurrentChanged += new System.EventHandler(this.bsItems_CurrentChanged);
+            this.bsItems.PositionChanged += new System.EventHandler(this.bsItems_PositionChanged);
+            // 
             // bsCategories
             // 
+            this.bsCategories.CurrentChanged += new System.EventHandler(this.bsCategories_CurrentChanged);
             this.bsCategories.PositionChanged += new System.EventHandler(this.bsCategories_PositionChanged);
             // 
             // frmMain
@@ -438,8 +488,9 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCategories)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -462,21 +513,25 @@
         private System.Windows.Forms.TextBox txtTags;
         public System.Windows.Forms.BindingSource bsItems;
         public System.Windows.Forms.BindingSource bsCategories;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nam;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton btnSave;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton categories;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.RadioButton rbDate;
         private System.Windows.Forms.RadioButton rbAsc;
         private System.Windows.Forms.CheckBox chkDetails;
         private System.Windows.Forms.CheckBox chkTags;
         private FastColoredTextBoxNS.FastColoredTextBox txtDetails;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton tsBtnImage;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn img;
     }
 }

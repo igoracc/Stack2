@@ -10,6 +10,8 @@ using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Windows.Forms;
 using Microsoft.Win32;
+using System.Drawing;
+using System.IO;
 
 namespace Stack2
 {
@@ -316,6 +318,25 @@ namespace Stack2
 
         }
 
+
+        public Bitmap GetImageFromStavke( long id)
+        {
+
+
+
+            MemoryStream stream = new MemoryStream();
+
+            SqlCommand command = new SqlCommand("  SELECT [image] FROM Items WHERE ID =  "   + id + "", dbCon);
+
+
+            byte[] image = (byte[])command.ExecuteScalar();
+            stream.Write(image, 0, image.Length);
+
+            Bitmap bitmap = new Bitmap(stream);
+
+            return bitmap;
+
+        }
 
 
 

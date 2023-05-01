@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Stack2.forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +26,7 @@ namespace Stack2
         long categoryID=0, ItemId=0;
         long LangId = 0;
         Boolean fillStart = false;
+        int image = 0;
 
         public frmMain()
         {
@@ -101,16 +105,27 @@ namespace Stack2
 
         private long GetItemId()
         {
-
+            image = 0;
             if (bsItems.Count > 0 && bsItems.Position <= dgItems.Rows.Count && bsItems.Position != -1)
 
             {
+
+                try
+                {
+                    image = Convert.ToInt16(dgItems.CurrentRow.Cells[2].Value.ToString());
+                }
+                catch (Exception)
+                {
+
+                   /// throw;
+                }
 
                 return Convert.ToInt64(dgItems.CurrentRow.Cells[0].Value.ToString());
 
             }
             else
             {
+                image = 0;
                 return 0;
             }
         }
@@ -139,6 +154,19 @@ namespace Stack2
             {
                 txtDetails.Text = clCrud.ExecuteScalarSQL("SELECT Details FROM Items WHERE ID = " + ItemId).ToString();
                 txtTags.Text = clCrud.ExecuteScalarSQL("SELECT Tags FROM Items WHERE ID = " + ItemId).ToString();
+
+                if (image != 0)
+                {
+                    pictureBox1.Image = clCrud.GetImageFromStavke(ItemID);
+                    pictureBox1.BringToFront();
+                }
+
+                else
+                {
+                    pictureBox1.SendToBack();
+                }
+
+
             }
             else
             {
@@ -258,6 +286,52 @@ namespace Stack2
 
             MessageBox.Show(linkDesc.ToString());
 
+
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+
+            frmCategories form = new frmCategories();
+
+            form.LangID = LangId;
+
+            form.ShowDialog();
+
+            getCategories(LangId);
+
+        }
+
+        private void tsBtnImage_Click(object sender, EventArgs e)
+        {
+
+
+
+
+        }
+
+        private void txtDetails_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.S)
+            {
+                
+                toolStripButton4_Click(this, e);
+
+            }
+        }
+
+        private void dgItems_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        private void dgCategory_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        private void bsCategories_CurrentChanged(object sender, EventArgs e)
+        {
 
         }
 

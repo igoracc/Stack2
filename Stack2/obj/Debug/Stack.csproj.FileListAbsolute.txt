@@ -23,3 +23,4 @@ C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.exe
 C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.pdb
 C:\Users\igor\Documents\GitHub\Stack2\Stack2\bin\Debug\FastColoredTextBox.dll
 C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack.csproj.CopyComplete
+C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.forms.frmCategories.resources

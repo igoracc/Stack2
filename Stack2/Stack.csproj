@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClCrud.cs" />
+    <Compile Include="forms\frmCategories1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmCategories1.Designer.cs">
+      <DependentUpon>frmCategories1.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEditStav.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\frmCategories1.resx">
+      <DependentUpon>frmCategories1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditStav.resx">
       <DependentUpon>frmEditStav.cs</DependentUpon>
     </EmbeddedResource>
