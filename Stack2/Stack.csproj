@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClCrud.cs" />
+    <Compile Include="forms\frmImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmImage.Designer.cs">
+      <DependentUpon>frmImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frmCategories1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\frmImage.resx">
+      <DependentUpon>frmImage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frmCategories1.resx">
       <DependentUpon>frmCategories1.cs</DependentUpon>
     </EmbeddedResource>

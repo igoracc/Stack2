@@ -147,7 +147,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgCategory);
             this.MinimizeBox = false;
-            this.Name = "frmCategories";
+            ///this.Name = "frmCategories";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categories";
             this.Load += new System.EventHandler(this.frmCategories_Load);

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Microsoft.Win32;
 using System.Drawing;
 using System.IO;
+using FastColoredTextBoxNS;
 
 namespace Stack2
 {
@@ -161,7 +162,7 @@ namespace Stack2
         }
 
 
-        public long AddEditItem (int modus,long CategoryID, long LanguageID, string Name, string Details, string Tags,string HyperLink, int IsImage = 0 , long ID = 0 )
+        public long AddEditItem (int modus,long CategoryID, long LanguageID, string Name, string Details, string Tags,string HyperLink, int IsImage = 0 , long ID = 0,  Image img = null)
         {
 
              long n = 0;
@@ -199,7 +200,7 @@ namespace Stack2
             ";
 
             }
-            else
+            else if( modus == 2)
             {
 
                 cmd.CommandText = @"UPDATE  [Items] SET
@@ -217,6 +218,47 @@ namespace Stack2
                 cmd.Parameters.AddWithValue("@ID", ID);
             }
 
+            else if (modus == 4)
+            {
+
+                cmd.CommandText = @"INSERT INTO [dbo].[Items]
+                                                       ([CategoryID]
+                                                       ,[LanguageID]
+                                                       ,[Name]
+                                                       ,[Details]
+                                                       ,[Tags]
+                                                       ,[HyperLink]
+                                                       ,[Hidden]
+                                                       ,[IsImage], Image)
+                                                         VALUES  (
+
+                                                        @CategoryID,
+                                                        @LanguageID,
+                                                        @Name,
+                                                        @Details,
+                                                        @Tags,
+                                                        @HyperLink,
+                                                        0,
+                                                        @IsImage, @IMG
+                                                        );
+
+                                    SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY];  
+                        ";
+
+
+                byte[] arr;
+                ImageConverter converter = new ImageConverter();
+                arr = (byte[])converter.ConvertTo(img, typeof(byte[]));
+
+
+                cmd.Parameters.AddWithValue("@IMG", arr);
+                IsImage = 1;
+
+
+            }
+
+
+
 
 
             cmd.Parameters.AddWithValue("@CategoryID", CategoryID);
@@ -226,6 +268,10 @@ namespace Stack2
             cmd.Parameters.AddWithValue("@Tags", Tags);
             cmd.Parameters.AddWithValue("@HyperLink", HyperLink);
             cmd.Parameters.AddWithValue("@IsImage", IsImage);
+
+
+
+
 
 
             try
@@ -303,7 +349,7 @@ namespace Stack2
         {
             object OutVal = null;
 
-            string sq = @"SELECT  " + field + " FROM " + table + " WHERE " + searchField + " = " + searchValue + " ";
+            string sq = @"SELECT  " + field + " FROM " + table + " WHERE " + searchField + " = '" + searchValue + "' ";
 
             try
             {

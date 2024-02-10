@@ -62,7 +62,16 @@ namespace Stack2
             LanguageID = Convert.ToInt64(clCrud.ExecuteScalarSQL("  SELECT ID FROM ProgrammingLanguage WHERE naziv = '" + cboLang.Text + "'"));
 
 
-            clCrud.AddEditItem(modus, CategoryId, LanguageID, txtName.Text, txtDetails.Text, txtTags.Text, txtHyperlink.Text,0, ItemID);
+            if (modus != 4)
+            {
+                clCrud.AddEditItem(modus, CategoryId, LanguageID, txtName.Text, txtDetails.Text, txtTags.Text, txtHyperlink.Text, 0, ItemID);
+            }
+            else
+            {
+                clCrud.AddEditItem(modus, CategoryId, LanguageID, txtName.Text, txtDetails.Text, txtTags.Text, txtHyperlink.Text, 0, ItemID, pictureBox1.Image);
+            }
+
+
             this.Close();
         }
 
@@ -74,6 +83,10 @@ namespace Stack2
 
         private void frmEditStav_Load_1(object sender, EventArgs e)
         {
+            
+            
+            
+            
             if (modus == 1)
             {
                 this.Text = "New item";
@@ -88,8 +101,28 @@ namespace Stack2
                 this.Text = "Delete item";
                 gatherData(ItemID);
             }
+            else if (modus == 4)
+            {
+                try
+                {
+                    pictureBox1.BringToFront();
 
-            fillCBOLang();
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    pictureBox1.Image = Clipboard.GetImage();
+
+                    btnGetImage.Visible = true;
+                }
+                catch (Exception)
+                {
+                }
+
+
+
+            }
+
+
+                fillCBOLang();
 
             fillCBOCategory();
 
@@ -139,7 +172,7 @@ namespace Stack2
                                       ,[Tags]
                                       ,[HyperLink]
                                       ,[Hidden]
-                                      ,[DateCreated]
+                                      ,cast ([DateCreated] as nvarchar) as [DateCreated]
                                       ,[IsImage]
                                   FROM [Items] WHERE ID =  {0}
                               ", idStav);
@@ -158,6 +191,8 @@ namespace Stack2
                 txtDetails.Text = row.Field<string>("Details");
                 txtHyperlink.Text = row.Field<string>("HyperLink");
 
+                dtDateCreated.Text = row.Field<string>("DateCreated");
+
                 ///txtHyperLink.Text = row.Field<string>("HyperLink");
 
 
@@ -171,6 +206,52 @@ namespace Stack2
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void cboLang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            ///SELECT naziv from ProgrammingLanguage WHERE ID =
+            ///
+            LanguageID = Convert.ToInt32( clCrud.GetValue("ID", "ProgrammingLanguage", "naziv", cboLang.Text, LanguageID));
+
+            fillCBOCategory();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Clipboard.GetImage();
+        }
+
+        private void txtDetails_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDetails_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Tab)
+            {
+                button1.Focus();
+            }
+
+        }
+
+        private void txtName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtTags.Focus();
+            }
+        }
+
+        private void txtTags_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtDetails.Focus();
+            }
         }
     }
 

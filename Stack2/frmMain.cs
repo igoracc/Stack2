@@ -44,6 +44,8 @@ namespace Stack2
             ItemId = GetItemId();
             fillDetailsAboutItem(ItemId);
 
+            this.WindowState = FormWindowState.Maximized;
+
 
         }
 
@@ -73,10 +75,31 @@ namespace Stack2
                             AND Categories.LanguageID = " + LangId + " ";
 
 
-            if (chkDetails.Checked)
+           /// query = @" SELECT  ID, Name, IsImage from Items WHERE Hidden =  0 AND CategoryID =  " + CategoryID;
+
+
+            if (chkAllWord.Checked)
             {
-                query = query + " AND Items.Details LIKE '%" + txtSearch.Text + "%' ";
+                string findWords = txtSearch.Text;
+
+
+                string[] words = findWords.Split(new char[] { ' ', ',', ';', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (string word in words)
+                {
+                    query += " AND Items.Details + Items.Tags + Items.Name LIKE '%" + word + "%'";
+                }
+
             }
+            else
+            {
+
+                if (chkDetails.Checked)
+                {
+                    query = query + " AND Items.Details LIKE '%" + txtSearch.Text + "%' ";
+                }
+
+            }
+
 
 
             query += " GROUP BY Categories.ID ,Categories.Name ORDER BY Categories.Name";
@@ -284,7 +307,8 @@ namespace Stack2
 
             linkDesc = clCrud.GetValue("HyperLink", "Items", "ID", ItemId.ToString(), "").ToString();
 
-            MessageBox.Show(linkDesc.ToString());
+
+            System.Diagnostics.Process.Start(linkDesc );
 
 
         }
@@ -304,9 +328,15 @@ namespace Stack2
 
         private void tsBtnImage_Click(object sender, EventArgs e)
         {
+            frmEditStav fr = new frmEditStav();
 
+            fr.LanguageID = LangId;
+            fr.CategoryId = categoryID;
+            fr.modus = 4;
 
+            fr.ShowDialog();
 
+            getItems(categoryID);
 
         }
 
@@ -338,7 +368,7 @@ namespace Stack2
         private void getItems(long CategoryID = 0,  long findID=0)
         {
 
-            if (chkDetails.Checked)
+            if (chkDetails.Checked || chkAllWord.Checked)
             {
                 if(fillStart == false)
                 {
@@ -354,32 +384,49 @@ namespace Stack2
             query = @" SELECT  ID, Name, IsImage from Items WHERE Hidden =  0 AND CategoryID =  " + CategoryID;
 
 
-
-
-
-            if (chkTags.Checked)
+            if (chkAllWord.Checked )
             {
-                if (chkDetails.Checked)
+
+
+
+                string findWords = txtSearch.Text;
+
+
+                string[] words = findWords.Split(new char[] { ' ', ',', ';', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (string word in words)
                 {
-                    query += " AND Details + Tags + Name LIKE '%" + txtSearch.Text + "%'";
+                    query += " AND Details + Tags + Name LIKE '%" + word + "%'";
                 }
-                else
-                {
-                    query += " AND tags + Name LIKE '%" + txtSearch.Text + "%'";
-                }
+
 
             }
             else
             {
-                if (chkDetails.Checked)
+
+                if (chkTags.Checked)
                 {
-                    query += " AND Details + Name LIKE '%" + txtSearch.Text + "%'";
+                    if (chkDetails.Checked)
+                    {
+                        query += " AND Details + Tags + Name LIKE '%" + txtSearch.Text + "%'";
+                    }
+                    else
+                    {
+                        query += " AND tags + Name LIKE '%" + txtSearch.Text + "%'";
+                    }
+
                 }
                 else
                 {
-                    query += " AND Name LIKE '%" + txtSearch.Text + "%'";
-                }
+                    if (chkDetails.Checked)
+                    {
+                        query += " AND Details + Name LIKE '%" + txtSearch.Text + "%'";
+                    }
+                    else
+                    {
+                        query += " AND Name LIKE '%" + txtSearch.Text + "%'";
+                    }
 
+                }
 
             }
 

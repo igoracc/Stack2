@@ -43,6 +43,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.chkAllWord = new System.Windows.Forms.CheckBox();
             this.chkDetails = new System.Windows.Forms.CheckBox();
             this.chkTags = new System.Windows.Forms.CheckBox();
             this.rbDate = new System.Windows.Forms.RadioButton();
@@ -58,12 +59,12 @@
             this.ID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.img = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsItems = new System.Windows.Forms.BindingSource(this.components);
             this.dgCategory = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.bsItems = new System.Windows.Forms.BindingSource(this.components);
             this.bsCategories = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -71,10 +72,10 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCategories)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -91,7 +92,7 @@
             this.tsBtnImage});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1249, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1028, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -149,8 +150,8 @@
             this.categories.Image = ((System.Drawing.Image)(resources.GetObject("categories.Image")));
             this.categories.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.categories.Name = "categories";
-            this.categories.Size = new System.Drawing.Size(49, 22);
-            this.categories.Text = "Add";
+            this.categories.Size = new System.Drawing.Size(83, 22);
+            this.categories.Text = "Categories";
             this.categories.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripSeparator2
@@ -165,7 +166,6 @@
             this.tsBtnImage.Name = "tsBtnImage";
             this.tsBtnImage.Size = new System.Drawing.Size(60, 22);
             this.tsBtnImage.Text = "Image";
-            this.tsBtnImage.Visible = false;
             this.tsBtnImage.Click += new System.EventHandler(this.tsBtnImage_Click);
             // 
             // txtSearch
@@ -186,13 +186,15 @@
             this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1249, 39);
+            this.panel1.Size = new System.Drawing.Size(1028, 39);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.comboBox1);
+            this.panel4.Controls.Add(this.chkAllWord);
             this.panel4.Controls.Add(this.chkDetails);
             this.panel4.Controls.Add(this.chkTags);
             this.panel4.Controls.Add(this.rbDate);
@@ -201,6 +203,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(511, 31);
             this.panel4.TabIndex = 6;
+            // 
+            // chkAllWord
+            // 
+            this.chkAllWord.AutoSize = true;
+            this.chkAllWord.Location = new System.Drawing.Point(134, 7);
+            this.chkAllWord.Name = "chkAllWord";
+            this.chkAllWord.Size = new System.Drawing.Size(68, 17);
+            this.chkAllWord.TabIndex = 5;
+            this.chkAllWord.Text = "All words";
+            this.chkAllWord.UseVisualStyleBackColor = true;
             // 
             // chkDetails
             // 
@@ -252,9 +264,8 @@
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(905, 3);
+            this.panel3.Location = new System.Drawing.Point(684, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(341, 33);
             this.panel3.TabIndex = 5;
@@ -262,9 +273,9 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(163, 3);
+            this.comboBox1.Location = new System.Drawing.Point(208, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(165, 21);
+            this.comboBox1.Size = new System.Drawing.Size(153, 21);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -304,7 +315,7 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(0, 73);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1249, 578);
+            this.panel2.Size = new System.Drawing.Size(1028, 578);
             this.panel2.TabIndex = 3;
             // 
             // txtDetails
@@ -327,11 +338,15 @@
     "]*(?<range>:)\\s*(?<range>[^;]+);\r\n";
             this.txtDetails.AutoScrollMinSize = new System.Drawing.Size(27, 14);
             this.txtDetails.BackBrush = null;
+            this.txtDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(40)))));
             this.txtDetails.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
             this.txtDetails.CharHeight = 14;
             this.txtDetails.CharWidth = 8;
+            this.txtDetails.CurrentLineColor = System.Drawing.Color.Gainsboro;
             this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtDetails.Font = new System.Drawing.Font("Courier New", 9.75F);
+            this.txtDetails.ForeColor = System.Drawing.Color.Yellow;
             this.txtDetails.IsReplaceMode = false;
             this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
             this.txtDetails.LeftBracket = '(';
@@ -343,7 +358,7 @@
             this.txtDetails.RightBracket2 = '}';
             this.txtDetails.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.txtDetails.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("txtDetails.ServiceColors")));
-            this.txtDetails.Size = new System.Drawing.Size(885, 546);
+            this.txtDetails.Size = new System.Drawing.Size(664, 546);
             this.txtDetails.TabIndex = 4;
             this.txtDetails.Zoom = 100;
             this.txtDetails.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDetails_KeyDown);
@@ -354,7 +369,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTags.Location = new System.Drawing.Point(361, 555);
             this.txtTags.Name = "txtTags";
-            this.txtTags.Size = new System.Drawing.Size(885, 20);
+            this.txtTags.Size = new System.Drawing.Size(664, 20);
             this.txtTags.TabIndex = 3;
             // 
             // dgItems
@@ -403,6 +418,11 @@
             this.img.ReadOnly = true;
             this.img.Visible = false;
             // 
+            // bsItems
+            // 
+            this.bsItems.CurrentChanged += new System.EventHandler(this.bsItems_CurrentChanged);
+            this.bsItems.PositionChanged += new System.EventHandler(this.bsItems_PositionChanged);
+            // 
             // dgCategory
             // 
             this.dgCategory.AllowUserToAddRows = false;
@@ -441,6 +461,11 @@
             this.Nam.Name = "Nam";
             this.Nam.ReadOnly = true;
             // 
+            // bsCategories
+            // 
+            this.bsCategories.CurrentChanged += new System.EventHandler(this.bsCategories_CurrentChanged);
+            this.bsCategories.PositionChanged += new System.EventHandler(this.bsCategories_PositionChanged);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -449,27 +474,17 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(361, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(885, 546);
+            this.pictureBox1.Size = new System.Drawing.Size(664, 546);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
-            // 
-            // bsItems
-            // 
-            this.bsItems.CurrentChanged += new System.EventHandler(this.bsItems_CurrentChanged);
-            this.bsItems.PositionChanged += new System.EventHandler(this.bsItems_PositionChanged);
-            // 
-            // bsCategories
-            // 
-            this.bsCategories.CurrentChanged += new System.EventHandler(this.bsCategories_CurrentChanged);
-            this.bsCategories.PositionChanged += new System.EventHandler(this.bsCategories_PositionChanged);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1249, 649);
+            this.ClientSize = new System.Drawing.Size(1028, 649);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
@@ -488,10 +503,10 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCategories)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -533,5 +548,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn img;
+        private System.Windows.Forms.CheckBox chkAllWord;
     }
 }

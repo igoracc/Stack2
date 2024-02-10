@@ -24,10 +24,34 @@ namespace Stack2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmMain form = new frmMain();
-            form.ShowDialog();
-            this.Close();
 
+            if (txtPassword.Text == "2022" )
+            {
+                frmMain form = new frmMain();
+                form.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Wrong password");
+            }
+
+
+
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnOk.Focus();
+            }
         }
     }
 }
