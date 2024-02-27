@@ -385,6 +385,28 @@ namespace Stack2
         }
 
 
+        public void InsertClipboardText(string Details )
+        {
+            long n = 1;
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = dbCon;
+
+            cmd.CommandText = @"INSERT INTO clipboard ([text]) VALUES (@text)";
+            cmd.Parameters.AddWithValue("@text", Details);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+                n = 0;
+                //throw;
+            }
+ 
+        }
 
 
     }

@@ -27,6 +27,7 @@ namespace Stack2
         long LangId = 0;
         Boolean fillStart = false;
         int image = 0;
+        string clipboardText = "";
 
         public frmMain()
         {
@@ -45,6 +46,8 @@ namespace Stack2
             fillDetailsAboutItem(ItemId);
 
             this.WindowState = FormWindowState.Maximized;
+
+            timer1.Enabled = true;
 
 
         }
@@ -182,11 +185,13 @@ namespace Stack2
                 {
                     pictureBox1.Image = clCrud.GetImageFromStavke(ItemID);
                     pictureBox1.BringToFront();
+                    showImage.Enabled = true;
                 }
 
                 else
                 {
                     pictureBox1.SendToBack();
+                    showImage.Enabled = false;
                 }
 
 
@@ -362,6 +367,43 @@ namespace Stack2
 
         private void bsCategories_CurrentChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+
+            if (  Clipboard.GetText(TextDataFormat.Text) != clipboardText)
+            {
+                clipboardText = Clipboard.GetText(TextDataFormat.Text);
+                clCrud.InsertClipboardText(clipboardText);
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (btnCLipBoard.Text == "CPB OFF")
+            {
+                timer1.Enabled = false;
+                btnCLipBoard.Text = "CPB ON";
+
+            }
+            else
+            {
+                timer1.Enabled = true;
+                btnCLipBoard.Text = "CPB OFF";
+            }
+        }
+
+        private void toolStripButton4_Click_1(object sender, EventArgs e)
+        {
+
+            frmImg frm = new frmImg();
+            frm.img = pictureBox1.Image;
+
+            frm.ShowDialog();
 
         }
 

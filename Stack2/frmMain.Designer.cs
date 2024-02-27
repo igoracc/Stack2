@@ -43,13 +43,14 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnCLipBoard = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.chkAllWord = new System.Windows.Forms.CheckBox();
             this.chkDetails = new System.Windows.Forms.CheckBox();
             this.chkTags = new System.Windows.Forms.CheckBox();
             this.rbDate = new System.Windows.Forms.RadioButton();
             this.rbAsc = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -65,6 +66,8 @@
             this.Nam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsCategories = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.showImage = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -89,6 +92,7 @@
             this.toolStripButton6,
             this.categories,
             this.toolStripSeparator2,
+            this.showImage,
             this.tsBtnImage});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -164,8 +168,8 @@
             this.tsBtnImage.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnImage.Image")));
             this.tsBtnImage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnImage.Name = "tsBtnImage";
-            this.tsBtnImage.Size = new System.Drawing.Size(60, 22);
-            this.tsBtnImage.Text = "Image";
+            this.tsBtnImage.Size = new System.Drawing.Size(92, 22);
+            this.tsBtnImage.Text = "Insert Image";
             this.tsBtnImage.Click += new System.EventHandler(this.tsBtnImage_Click);
             // 
             // txtSearch
@@ -193,6 +197,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.btnCLipBoard);
             this.panel4.Controls.Add(this.comboBox1);
             this.panel4.Controls.Add(this.chkAllWord);
             this.panel4.Controls.Add(this.chkDetails);
@@ -201,8 +206,27 @@
             this.panel4.Controls.Add(this.rbAsc);
             this.panel4.Location = new System.Drawing.Point(388, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(511, 31);
+            this.panel4.Size = new System.Drawing.Size(580, 31);
             this.panel4.TabIndex = 6;
+            // 
+            // btnCLipBoard
+            // 
+            this.btnCLipBoard.Location = new System.Drawing.Point(458, 6);
+            this.btnCLipBoard.Name = "btnCLipBoard";
+            this.btnCLipBoard.Size = new System.Drawing.Size(70, 20);
+            this.btnCLipBoard.TabIndex = 6;
+            this.btnCLipBoard.Text = "CPB OFF";
+            this.btnCLipBoard.UseVisualStyleBackColor = true;
+            this.btnCLipBoard.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(208, 4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(123, 21);
+            this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // chkAllWord
             // 
@@ -240,7 +264,7 @@
             // 
             this.rbDate.AutoSize = true;
             this.rbDate.Checked = true;
-            this.rbDate.Location = new System.Drawing.Point(449, 7);
+            this.rbDate.Location = new System.Drawing.Point(404, 7);
             this.rbDate.Name = "rbDate";
             this.rbDate.Size = new System.Drawing.Size(48, 17);
             this.rbDate.TabIndex = 2;
@@ -252,7 +276,7 @@
             // rbAsc
             // 
             this.rbAsc.AutoSize = true;
-            this.rbAsc.Location = new System.Drawing.Point(397, 7);
+            this.rbAsc.Location = new System.Drawing.Point(352, 7);
             this.rbAsc.Name = "rbAsc";
             this.rbAsc.Size = new System.Drawing.Size(46, 17);
             this.rbAsc.TabIndex = 1;
@@ -269,15 +293,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(341, 33);
             this.panel3.TabIndex = 5;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(208, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(153, 21);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -479,6 +494,20 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // showImage
+            // 
+            this.showImage.Image = ((System.Drawing.Image)(resources.GetObject("showImage.Image")));
+            this.showImage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.showImage.Name = "showImage";
+            this.showImage.Size = new System.Drawing.Size(88, 22);
+            this.showImage.Text = "View Image";
+            this.showImage.Click += new System.EventHandler(this.toolStripButton4_Click_1);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,5 +578,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn img;
         private System.Windows.Forms.CheckBox chkAllWord;
+        private System.Windows.Forms.Button btnCLipBoard;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripButton showImage;
     }
 }
