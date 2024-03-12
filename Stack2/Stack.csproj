@@ -52,6 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClCrud.cs" />
+    <Compile Include="forms\frmClipboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmClipboard.Designer.cs">
+      <DependentUpon>frmClipboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frmImage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\frmClipboard.resx">
+      <DependentUpon>frmClipboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frmImage.resx">
       <DependentUpon>frmImage.cs</DependentUpon>
     </EmbeddedResource>

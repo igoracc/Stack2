@@ -30,6 +30,18 @@ namespace Stack2
             //  constr = @"Server=WORKSTATION\SQL;Database=IGIS;User Id = igor; Password=1234567;";
             constr = ReadRegistry("constr");
 
+            string user, pass, sql;
+
+
+
+            if (constr == "" )
+            {
+                user = ReadRegistry("user");
+                pass = ReadRegistry("pass");
+                sql = ReadRegistry("sql");
+                constr = @"Server=" + sql + ";Database=IGIS; User Id = " + user + "; Password =" + pass + ";"; 
+            }
+
         }
 
 
@@ -42,8 +54,17 @@ namespace Stack2
             //if it does exist, retrieve the stored values  
             if (key != null)
             {
-                valueOfKey = key.GetValue(RegKeyName).ToString();
-                key.Close();
+                try
+                {
+                    valueOfKey = key.GetValue(RegKeyName).ToString();
+                    key.Close();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
             }
             return valueOfKey;
 

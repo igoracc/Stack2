@@ -39,6 +39,7 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.categories = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.showImage = new System.Windows.Forms.ToolStripButton();
             this.tsBtnImage = new System.Windows.Forms.ToolStripButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -67,7 +68,8 @@
             this.bsCategories = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.showImage = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsClipBoard = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -93,7 +95,9 @@
             this.categories,
             this.toolStripSeparator2,
             this.showImage,
-            this.tsBtnImage});
+            this.tsBtnImage,
+            this.toolStripSeparator3,
+            this.tsClipBoard});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1028, 25);
@@ -162,6 +166,15 @@
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // showImage
+            // 
+            this.showImage.Image = ((System.Drawing.Image)(resources.GetObject("showImage.Image")));
+            this.showImage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.showImage.Name = "showImage";
+            this.showImage.Size = new System.Drawing.Size(88, 22);
+            this.showImage.Text = "View Image";
+            this.showImage.Click += new System.EventHandler(this.toolStripButton4_Click_1);
             // 
             // tsBtnImage
             // 
@@ -360,7 +373,6 @@
             this.txtDetails.CurrentLineColor = System.Drawing.Color.Gainsboro;
             this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txtDetails.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.txtDetails.ForeColor = System.Drawing.Color.Yellow;
             this.txtDetails.IsReplaceMode = false;
             this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
@@ -499,14 +511,19 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // showImage
+            // toolStripSeparator3
             // 
-            this.showImage.Image = ((System.Drawing.Image)(resources.GetObject("showImage.Image")));
-            this.showImage.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.showImage.Name = "showImage";
-            this.showImage.Size = new System.Drawing.Size(88, 22);
-            this.showImage.Text = "View Image";
-            this.showImage.Click += new System.EventHandler(this.toolStripButton4_Click_1);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tsClipBoard
+            // 
+            this.tsClipBoard.Image = ((System.Drawing.Image)(resources.GetObject("tsClipBoard.Image")));
+            this.tsClipBoard.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsClipBoard.Name = "tsClipBoard";
+            this.tsClipBoard.Size = new System.Drawing.Size(79, 22);
+            this.tsClipBoard.Text = "Clipboard";
+            this.tsClipBoard.Click += new System.EventHandler(this.tsClipBoard_Click);
             // 
             // frmMain
             // 
@@ -581,5 +598,7 @@
         private System.Windows.Forms.Button btnCLipBoard;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripButton showImage;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton tsClipBoard;
     }
 }

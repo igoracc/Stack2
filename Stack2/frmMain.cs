@@ -407,6 +407,18 @@ namespace Stack2
 
         }
 
+        private void tsClipBoard_Click(object sender, EventArgs e)
+        {
+
+            frmClipboard fr = new frmClipboard();
+
+            fr.ShowDialog();
+
+            getItems(categoryID);
+
+
+        }
+
         private void getItems(long CategoryID = 0,  long findID=0)
         {
 
