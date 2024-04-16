@@ -159,7 +159,16 @@ namespace Stack2
             cboCategory.DisplayMember = "Name";
             cboCategory.ValueMember = "Name";
 
-            cboCategory.SelectedValue = clCrud.ExecuteScalarSQL("SELECT name FROM Categories WHERE ID =" + CategoryId);
+            try
+            {
+                cboCategory.SelectedValue = clCrud.ExecuteScalarSQL("SELECT name FROM Categories WHERE ID =" + CategoryId);
+            }
+            catch (Exception)
+            {
+
+                ////throw;
+            }
+
 
         }
 

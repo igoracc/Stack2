@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Stack2.forms
 {
-    public partial class frmClipboard : Form
+    public partial class frmClipboard1 : Form
     {
         ClCrud clCrud = new ClCrud();
 
@@ -19,7 +19,7 @@ namespace Stack2.forms
 
         public long LangID ;
 
-        public frmClipboard()
+        public frmClipboard1()
         {
             InitializeComponent();
         }
@@ -35,10 +35,11 @@ namespace Stack2.forms
         {
             query = @" SELECT  id,datum,text,opis FROM [clipboard]   ";
 
-            //if (txtSearch.Text != "")
-            //{
-            //    query = query + " AND Items.Details LIKE '%" + txtSearch.Text + "%' ";
-            //}
+ 
+            if (txtSearch.Text !="")
+            {
+                query = query + " AND text LIKE '%" + txtSearch.Text + "%' ";
+            }
 
             query += "  ORDER BY datum desc ";
 
@@ -86,6 +87,39 @@ namespace Stack2.forms
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            frmEditStav frm = new frmEditStav();
+
+            frm.txtDetails.Text = txtDescriptions.Text;
+            frm.ShowDialog();
+
+
+
+        }
+
+        private void bsCategories_CurrentChanged(object sender, EventArgs e)
+        {
+
+            if (bsCategories.Count > 0 && bsCategories.Position <= dgCategory.Rows.Count && bsCategories.Position != -1)
+            {
+
+                txtDescriptions.Text = dgCategory.CurrentRow.Cells[1].Value.ToString();
+            }
+            else
+            {
+                txtDescriptions.Text = "";
+            }
+            
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            getData();
         }
     }
 }

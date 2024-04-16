@@ -250,7 +250,6 @@
             this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.txtDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDetails.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.txtDetails.IsReplaceMode = false;
             this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
             this.txtDetails.LeftBracket = '(';
@@ -272,6 +271,7 @@
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Location = new System.Drawing.Point(0, 580);
@@ -347,7 +347,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtHyperlink;
-        private FastColoredTextBoxNS.FastColoredTextBox txtDetails;
         private System.Windows.Forms.ComboBox cboLang;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboCategory;
@@ -357,5 +356,6 @@
         private System.Windows.Forms.Button btnGetImage;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtDateCreated;
+        public FastColoredTextBoxNS.FastColoredTextBox txtDetails;
     }
 }

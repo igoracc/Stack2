@@ -410,7 +410,7 @@ namespace Stack2
         private void tsClipBoard_Click(object sender, EventArgs e)
         {
 
-            frmClipboard fr = new frmClipboard();
+            frmClipboard1 fr = new frmClipboard1();
 
             fr.ShowDialog();
 

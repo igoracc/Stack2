@@ -26,4 +26,4 @@ C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack.csproj.CopyComplete
 C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.forms.frmCategories.resources
 C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.forms.frmImage.resources
 C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.forms.frmImg.resources
-C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.forms.frmClipboard.resources
+C:\Users\igor\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.forms.frmClipboard1.resources
