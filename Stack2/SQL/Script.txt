@@ -1,0 +1,218 @@
+USE [IGIS]
+GO
+/****** Object:  Table [dbo].[Categories]    Script Date: 7.5.2024. 15:46:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Categories](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[LanguageID] [bigint] NOT NULL,
+	[Name] [nvarchar](32) NULL,
+	[Hidden] [smallint] NULL DEFAULT ((0)),
+	[DateCreated] [datetime] NULL DEFAULT (getdate()),
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[clipboard]    Script Date: 7.5.2024. 15:46:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[clipboard](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[datum] [datetime] NULL DEFAULT (getdate()),
+	[text] [nvarchar](max) NULL,
+	[opis] [nvarchar](1000) NULL,
+	[itemId] [bigint] NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Contacts]    Script Date: 7.5.2024. 15:46:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Contacts](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](32) NULL,
+	[Company] [nvarchar](32) NULL,
+	[Phone] [nvarchar](32) NULL,
+	[Mobile] [nvarchar](32) NULL,
+	[Email] [nvarchar](32) NULL,
+	[Details] [nvarchar](1000) NULL,
+	[Hidden] [smallint] NULL,
+	[DateCreated] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Documnets]    Script Date: 7.5.2024. 15:46:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Documnets](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[ItemId] [bigint] NOT NULL,
+	[Name] [nvarchar](64) NULL,
+	[DocType] [smallint] NULL,
+	[Ext] [nvarchar](10) NULL,
+	[DocFile] [varbinary](max) NOT NULL,
+	[DateCreated] [datetime] NULL,
+	[Hidden] [smallint] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Items]    Script Date: 7.5.2024. 15:46:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Items](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[CategoryID] [bigint] NOT NULL,
+	[LanguageID] [bigint] NOT NULL,
+	[Name] [nvarchar](250) NULL,
+	[Details] [nvarchar](max) NULL,
+	[Tags] [nvarchar](4000) NULL DEFAULT (''),
+	[HyperLink] [nvarchar](1000) NULL DEFAULT (''),
+	[Hidden] [smallint] NULL DEFAULT ((0)),
+	[DateCreated] [datetime] NULL DEFAULT (getdate()),
+	[IsImage] [smallint] NULL DEFAULT ((0)),
+	[GUID]  AS ('GUID'),
+	[Image] [image] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[itemsOLD]    Script Date: 7.5.2024. 15:46:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[itemsOLD](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[CategoryID] [bigint] NOT NULL,
+	[LanguageID] [bigint] NOT NULL,
+	[Name] [nvarchar](250) NULL,
+	[Details] [nvarchar](max) NULL,
+	[Tags] [nvarchar](4000) NULL,
+	[HyperLink] [nvarchar](1000) NULL,
+	[Hidden] [smallint] NULL,
+	[DateCreated] [datetime] NULL,
+	[IsImage] [smallint] NULL,
+	[GUID] [varchar](4) NOT NULL,
+	[Image] [image] NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[ProgrammingLanguage]    Script Date: 7.5.2024. 15:46:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ProgrammingLanguage](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Naziv] [nvarchar](32) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Users]    Script Date: 7.5.2024. 15:46:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Users](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Username] [nvarchar](16) NULL,
+	[Name] [nvarchar](32) NULL,
+	[LastName] [nvarchar](32) NULL,
+	[Password] [nvarchar](32) NULL,
+	[Hidden] [smallint] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[zadatak]    Script Date: 7.5.2024. 15:46:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[zadatak](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[datum] [date] NULL,
+	[tekst] [nvarchar](200) NULL,
+	[trajanje] [int] NULL,
+	[tip] [smallint] NULL
+) ON [PRIMARY]
+
+GO
+ALTER TABLE [dbo].[Contacts] ADD  DEFAULT ('') FOR [Name]
+GO
+ALTER TABLE [dbo].[Contacts] ADD  DEFAULT ('') FOR [Company]
+GO
+ALTER TABLE [dbo].[Contacts] ADD  DEFAULT ('') FOR [Phone]
+GO
+ALTER TABLE [dbo].[Contacts] ADD  DEFAULT ('') FOR [Mobile]
+GO
+ALTER TABLE [dbo].[Contacts] ADD  DEFAULT ('') FOR [Email]
+GO
+ALTER TABLE [dbo].[Contacts] ADD  DEFAULT ('') FOR [Details]
+GO
+ALTER TABLE [dbo].[Contacts] ADD  DEFAULT ((0)) FOR [Hidden]
+GO
+ALTER TABLE [dbo].[Contacts] ADD  DEFAULT (getdate()) FOR [DateCreated]
+GO
+ALTER TABLE [dbo].[Documnets] ADD  DEFAULT ((0)) FOR [DocType]
+GO
+ALTER TABLE [dbo].[Documnets] ADD  DEFAULT ('') FOR [Ext]
+GO
+ALTER TABLE [dbo].[Documnets] ADD  DEFAULT (getdate()) FOR [DateCreated]
+GO
+ALTER TABLE [dbo].[Documnets] ADD  DEFAULT ((0)) FOR [Hidden]
+GO
+ALTER TABLE [dbo].[Users] ADD  DEFAULT ((0)) FOR [Hidden]
+GO
+ALTER TABLE [dbo].[zadatak] ADD  DEFAULT ((0)) FOR [trajanje]
+GO
+ALTER TABLE [dbo].[zadatak] ADD  DEFAULT ((0)) FOR [tip]
+GO
+ALTER TABLE [dbo].[Documnets]  WITH NOCHECK ADD  CONSTRAINT [FK_DocumtItem] FOREIGN KEY([ItemId])
+REFERENCES [dbo].[Items] ([ID])
+GO
+ALTER TABLE [dbo].[Documnets] NOCHECK CONSTRAINT [FK_DocumtItem]
+GO
