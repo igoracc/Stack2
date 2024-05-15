@@ -60,9 +60,9 @@ namespace Stack2
             dt = clCrud.GetDataTableSQL(query);
 
 
-            comboBox1.DataSource = dt;
-            comboBox1.DisplayMember = "Naziv";
-            comboBox1.ValueMember = "Naziv";
+            cbJezik.DataSource = dt;
+            cbJezik.DisplayMember = "Naziv";
+            cbJezik.ValueMember = "Naziv";
 
         }
 
@@ -73,9 +73,7 @@ namespace Stack2
                       ,Categories.Name
 					  FROM Categories 
 					  LEFT JOIN Items ON Items.CategoryID = Categories.ID
-					  
-					  WHERE isnull(Categories.hidden,0)=0  AND isnull(Items.hidden,0)=0 
-                            AND Categories.LanguageID = " + LangId + " ";
+					  WHERE isnull(Categories.hidden,0)=0  AND isnull(Items.hidden,0)=0  AND Categories.LanguageID = " + LangId + " ";
 
 
            /// query = @" SELECT  ID, Name, IsImage from Items WHERE Hidden =  0 AND CategoryID =  " + CategoryID;
@@ -85,21 +83,42 @@ namespace Stack2
             {
                 string findWords = txtSearch.Text;
 
+                query += " AND Items.Details + Items.Tags + Items.Name LIKE '%" + txtSearch.Text + "%'";
 
-                string[] words = findWords.Split(new char[] { ' ', ',', ';', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
-                foreach (string word in words)
-                {
-                    query += " AND Items.Details + Items.Tags + Items.Name LIKE '%" + word + "%'";
-                }
+                //string[] words = findWords.Split(new char[] { ' ', ',', ';', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+                //foreach (string word in words)
+                //{
+                //    query += " AND Items.Details + Items.Tags + Items.Name LIKE '%" + word + "%'";
+                //}
 
             }
             else
             {
 
+                Boolean bs = false;
+
+                if (chkName.Checked || chkDetails.Checked || chkTags.Checked)
+                {
+                    query += " AND ( Items.Name ";
+                }
+
+
+                if (chkTags.Checked)
+                {
+                    query += " + Items.tags ";
+                }
+
                 if (chkDetails.Checked)
                 {
-                    query = query + " AND Items.Details LIKE '%" + txtSearch.Text + "%' ";
+                    query += " + Items.Details ";
                 }
+
+
+                if (chkName.Checked || chkDetails.Checked || chkTags.Checked)
+                {
+                   query += "  LIKE '%" + txtSearch.Text + "%' ) ";
+                }
+
 
             }
 
@@ -235,7 +254,7 @@ namespace Stack2
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LangId = Convert.ToInt16(clCrud.ExecuteScalarSQL("SELECT ID FROM [ProgrammingLanguage] WHERE Naziv ='" + comboBox1.Text + "'"));
+            LangId = Convert.ToInt16(clCrud.ExecuteScalarSQL("SELECT ID FROM [ProgrammingLanguage] WHERE Naziv ='" + cbJezik.Text + "'"));
             getCategories(LangId);
 
 
@@ -435,7 +454,7 @@ namespace Stack2
             }
 
 
-            query = @" SELECT  ID, Name, IsImage from Items WHERE Hidden =  0 AND CategoryID =  " + CategoryID;
+            query = @" SELECT  ID, Name, IsImage FROM Items WHERE Hidden =  0 AND CategoryID =  " + CategoryID;
 
 
             if (chkAllWord.Checked )
@@ -457,30 +476,29 @@ namespace Stack2
             else
             {
 
-                if (chkTags.Checked)
+                if( chkName.Checked || chkDetails.Checked || chkTags.Checked)
                 {
-                    if (chkDetails.Checked)
-                    {
-                        query += " AND Details + Tags + Name LIKE '%" + txtSearch.Text + "%'";
-                    }
-                    else
-                    {
-                        query += " AND tags + Name LIKE '%" + txtSearch.Text + "%'";
-                    }
-
+                    query += "AND ( 1=1 AND Name";
                 }
-                else
+
+
+                if (chkTags.Checked )
                 {
-                    if (chkDetails.Checked)
-                    {
-                        query += " AND Details + Name LIKE '%" + txtSearch.Text + "%'";
-                    }
-                    else
-                    {
-                        query += " AND Name LIKE '%" + txtSearch.Text + "%'";
-                    }
-
+                    query += " + Tags ";
                 }
+
+                if (chkDetails.Checked)
+                {
+                    query += " + Details ";
+                }
+
+
+                if (chkName.Checked || chkDetails.Checked || chkTags.Checked)
+                {
+                    query += "  LIKE '%" + txtSearch.Text + "%' ";
+                    query += " ) ";
+                }
+
 
             }
 

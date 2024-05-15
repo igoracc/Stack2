@@ -28,8 +28,10 @@ namespace Stack2
             if (txtPassword.Text == "2022" )
             {
                 frmMain form = new frmMain();
+                this.Visible = false;
                 form.ShowDialog();
                 this.Close();
+
             }
             else
             {

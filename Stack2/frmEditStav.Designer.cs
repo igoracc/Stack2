@@ -46,17 +46,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtHyperlink = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtDetails = new FastColoredTextBoxNS.FastColoredTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtDetails = new FastColoredTextBoxNS.FastColoredTextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -111,7 +111,7 @@
             this.panel1.Controls.Add(this.txtTags);
             this.panel1.Location = new System.Drawing.Point(0, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(970, 101);
+            this.panel1.Size = new System.Drawing.Size(1050, 101);
             this.panel1.TabIndex = 0;
             // 
             // label6
@@ -134,9 +134,9 @@
             // 
             // btnGetImage
             // 
-            this.btnGetImage.Location = new System.Drawing.Point(603, 14);
+            this.btnGetImage.Location = new System.Drawing.Point(629, 14);
             this.btnGetImage.Name = "btnGetImage";
-            this.btnGetImage.Size = new System.Drawing.Size(57, 64);
+            this.btnGetImage.Size = new System.Drawing.Size(111, 64);
             this.btnGetImage.TabIndex = 15;
             this.btnGetImage.TabStop = false;
             this.btnGetImage.Text = "Get image";
@@ -151,7 +151,7 @@
             this.panel4.Controls.Add(this.cboCategory);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(666, 13);
+            this.panel4.Location = new System.Drawing.Point(746, 13);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(292, 65);
             this.panel4.TabIndex = 14;
@@ -224,48 +224,8 @@
             this.panel2.Controls.Add(this.txtDetails);
             this.panel2.Location = new System.Drawing.Point(12, 119);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(957, 455);
+            this.panel2.Size = new System.Drawing.Size(1037, 486);
             this.panel2.TabIndex = 2;
-            // 
-            // txtDetails
-            // 
-            this.txtDetails.AutoCompleteBracketsList = new char[] {
-        '(',
-        ')',
-        '{',
-        '}',
-        '[',
-        ']',
-        '\"',
-        '\"',
-        '\'',
-        '\''};
-            this.txtDetails.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;=]+);\r\n^\\s*(case|default)\\s*[^:" +
-    "]*(?<range>:)\\s*(?<range>[^;]+);\r\n";
-            this.txtDetails.AutoScrollMinSize = new System.Drawing.Size(27, 14);
-            this.txtDetails.BackBrush = null;
-            this.txtDetails.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
-            this.txtDetails.CharHeight = 14;
-            this.txtDetails.CharWidth = 8;
-            this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txtDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDetails.IsReplaceMode = false;
-            this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
-            this.txtDetails.LeftBracket = '(';
-            this.txtDetails.LeftBracket2 = '{';
-            this.txtDetails.Location = new System.Drawing.Point(0, 0);
-            this.txtDetails.Name = "txtDetails";
-            this.txtDetails.Paddings = new System.Windows.Forms.Padding(0);
-            this.txtDetails.RightBracket = ')';
-            this.txtDetails.RightBracket2 = '}';
-            this.txtDetails.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.txtDetails.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("txtDetails.ServiceColors")));
-            this.txtDetails.Size = new System.Drawing.Size(957, 455);
-            this.txtDetails.TabIndex = 0;
-            this.txtDetails.Zoom = 100;
-            this.txtDetails.Load += new System.EventHandler(this.txtDetails_Load);
-            this.txtDetails.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDetails_KeyDown);
             // 
             // panel3
             // 
@@ -274,9 +234,9 @@
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.button1);
-            this.panel3.Location = new System.Drawing.Point(0, 580);
+            this.panel3.Location = new System.Drawing.Point(0, 611);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(981, 48);
+            this.panel3.Size = new System.Drawing.Size(1061, 48);
             this.panel3.TabIndex = 3;
             // 
             // button2
@@ -308,12 +268,53 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // txtDetails
+            // 
+            this.txtDetails.AutoCompleteBracketsList = new char[] {
+        '(',
+        ')',
+        '{',
+        '}',
+        '[',
+        ']',
+        '\"',
+        '\"',
+        '\'',
+        '\''};
+            this.txtDetails.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;=]+);\r\n^\\s*(case|default)\\s*[^:" +
+    "]*(?<range>:)\\s*(?<range>[^;]+);\r\n";
+            this.txtDetails.AutoScrollMinSize = new System.Drawing.Size(27, 14);
+            this.txtDetails.BackBrush = null;
+            this.txtDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(40)))));
+            this.txtDetails.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
+            this.txtDetails.CharHeight = 14;
+            this.txtDetails.CharWidth = 8;
+            this.txtDetails.CurrentLineColor = System.Drawing.Color.Gainsboro;
+            this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDetails.ForeColor = System.Drawing.Color.Yellow;
+            this.txtDetails.IsReplaceMode = false;
+            this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
+            this.txtDetails.LeftBracket = '(';
+            this.txtDetails.LeftBracket2 = '{';
+            this.txtDetails.Location = new System.Drawing.Point(0, 0);
+            this.txtDetails.Name = "txtDetails";
+            this.txtDetails.Paddings = new System.Windows.Forms.Padding(0);
+            this.txtDetails.RightBracket = ')';
+            this.txtDetails.RightBracket2 = '}';
+            this.txtDetails.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.txtDetails.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("txtDetails.ServiceColors")));
+            this.txtDetails.Size = new System.Drawing.Size(1037, 486);
+            this.txtDetails.TabIndex = 5;
+            this.txtDetails.Zoom = 100;
+            // 
             // frmEditStav
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(970, 628);
+            this.ClientSize = new System.Drawing.Size(1050, 659);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -327,9 +328,9 @@
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).EndInit();
             this.ResumeLayout(false);
 
         }

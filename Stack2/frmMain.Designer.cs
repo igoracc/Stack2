@@ -41,18 +41,18 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.showImage = new System.Windows.Forms.ToolStripButton();
             this.tsBtnImage = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsClipBoard = new System.Windows.Forms.ToolStripButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnCLipBoard = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbJezik = new System.Windows.Forms.ComboBox();
             this.chkAllWord = new System.Windows.Forms.CheckBox();
             this.chkDetails = new System.Windows.Forms.CheckBox();
             this.chkTags = new System.Windows.Forms.CheckBox();
             this.rbDate = new System.Windows.Forms.RadioButton();
             this.rbAsc = new System.Windows.Forms.RadioButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtDetails = new FastColoredTextBoxNS.FastColoredTextBox();
@@ -68,12 +68,10 @@
             this.bsCategories = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsClipBoard = new System.Windows.Forms.ToolStripButton();
+            this.chkName = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
@@ -100,7 +98,7 @@
             this.tsClipBoard});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1028, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1267, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -185,6 +183,20 @@
             this.tsBtnImage.Text = "Insert Image";
             this.tsBtnImage.Click += new System.EventHandler(this.tsBtnImage_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tsClipBoard
+            // 
+            this.tsClipBoard.Image = ((System.Drawing.Image)(resources.GetObject("tsClipBoard.Image")));
+            this.tsClipBoard.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsClipBoard.Name = "tsClipBoard";
+            this.tsClipBoard.Size = new System.Drawing.Size(79, 22);
+            this.tsClipBoard.Text = "Clipboard";
+            this.tsClipBoard.Click += new System.EventHandler(this.tsClipBoard_Click);
+            // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(80, 11);
@@ -198,20 +210,20 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1028, 39);
+            this.panel1.Size = new System.Drawing.Size(1267, 39);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.chkName);
             this.panel4.Controls.Add(this.btnCLipBoard);
-            this.panel4.Controls.Add(this.comboBox1);
+            this.panel4.Controls.Add(this.cbJezik);
             this.panel4.Controls.Add(this.chkAllWord);
             this.panel4.Controls.Add(this.chkDetails);
             this.panel4.Controls.Add(this.chkTags);
@@ -219,12 +231,13 @@
             this.panel4.Controls.Add(this.rbAsc);
             this.panel4.Location = new System.Drawing.Point(388, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(580, 31);
+            this.panel4.Size = new System.Drawing.Size(867, 31);
             this.panel4.TabIndex = 6;
             // 
             // btnCLipBoard
             // 
-            this.btnCLipBoard.Location = new System.Drawing.Point(458, 6);
+            this.btnCLipBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCLipBoard.Location = new System.Drawing.Point(653, 5);
             this.btnCLipBoard.Name = "btnCLipBoard";
             this.btnCLipBoard.Size = new System.Drawing.Size(70, 20);
             this.btnCLipBoard.TabIndex = 6;
@@ -232,19 +245,20 @@
             this.btnCLipBoard.UseVisualStyleBackColor = true;
             this.btnCLipBoard.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comboBox1
+            // cbJezik
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(208, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(123, 21);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbJezik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbJezik.FormattingEnabled = true;
+            this.cbJezik.Location = new System.Drawing.Point(729, 5);
+            this.cbJezik.Name = "cbJezik";
+            this.cbJezik.Size = new System.Drawing.Size(123, 21);
+            this.cbJezik.TabIndex = 3;
+            this.cbJezik.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // chkAllWord
             // 
             this.chkAllWord.AutoSize = true;
-            this.chkAllWord.Location = new System.Drawing.Point(134, 7);
+            this.chkAllWord.Location = new System.Drawing.Point(193, 7);
             this.chkAllWord.Name = "chkAllWord";
             this.chkAllWord.Size = new System.Drawing.Size(68, 17);
             this.chkAllWord.TabIndex = 5;
@@ -254,7 +268,7 @@
             // chkDetails
             // 
             this.chkDetails.AutoSize = true;
-            this.chkDetails.Location = new System.Drawing.Point(70, 7);
+            this.chkDetails.Location = new System.Drawing.Point(129, 7);
             this.chkDetails.Name = "chkDetails";
             this.chkDetails.Size = new System.Drawing.Size(58, 17);
             this.chkDetails.TabIndex = 4;
@@ -264,9 +278,7 @@
             // chkTags
             // 
             this.chkTags.AutoSize = true;
-            this.chkTags.Checked = true;
-            this.chkTags.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkTags.Location = new System.Drawing.Point(14, 7);
+            this.chkTags.Location = new System.Drawing.Point(73, 7);
             this.chkTags.Name = "chkTags";
             this.chkTags.Size = new System.Drawing.Size(50, 17);
             this.chkTags.TabIndex = 3;
@@ -297,28 +309,6 @@
             this.rbAsc.UseVisualStyleBackColor = true;
             this.rbAsc.CheckedChanged += new System.EventHandler(this.rbAsc_CheckedChanged);
             // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(684, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(341, 33);
-            this.panel3.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(72, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Language";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // button1
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
@@ -343,7 +333,7 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(0, 73);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1028, 578);
+            this.panel2.Size = new System.Drawing.Size(1267, 578);
             this.panel2.TabIndex = 3;
             // 
             // txtDetails
@@ -373,6 +363,7 @@
             this.txtDetails.CurrentLineColor = System.Drawing.Color.Gainsboro;
             this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtDetails.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.txtDetails.ForeColor = System.Drawing.Color.Yellow;
             this.txtDetails.IsReplaceMode = false;
             this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
@@ -385,7 +376,7 @@
             this.txtDetails.RightBracket2 = '}';
             this.txtDetails.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.txtDetails.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("txtDetails.ServiceColors")));
-            this.txtDetails.Size = new System.Drawing.Size(664, 546);
+            this.txtDetails.Size = new System.Drawing.Size(903, 546);
             this.txtDetails.TabIndex = 4;
             this.txtDetails.Zoom = 100;
             this.txtDetails.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDetails_KeyDown);
@@ -396,7 +387,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTags.Location = new System.Drawing.Point(361, 555);
             this.txtTags.Name = "txtTags";
-            this.txtTags.Size = new System.Drawing.Size(664, 20);
+            this.txtTags.Size = new System.Drawing.Size(903, 20);
             this.txtTags.TabIndex = 3;
             // 
             // dgItems
@@ -501,7 +492,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(361, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(664, 546);
+            this.pictureBox1.Size = new System.Drawing.Size(903, 546);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -511,26 +502,24 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // toolStripSeparator3
+            // chkName
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tsClipBoard
-            // 
-            this.tsClipBoard.Image = ((System.Drawing.Image)(resources.GetObject("tsClipBoard.Image")));
-            this.tsClipBoard.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsClipBoard.Name = "tsClipBoard";
-            this.tsClipBoard.Size = new System.Drawing.Size(79, 22);
-            this.tsClipBoard.Text = "Clipboard";
-            this.tsClipBoard.Click += new System.EventHandler(this.tsClipBoard_Click);
+            this.chkName.AutoSize = true;
+            this.chkName.Checked = true;
+            this.chkName.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkName.Location = new System.Drawing.Point(13, 7);
+            this.chkName.Name = "chkName";
+            this.chkName.Size = new System.Drawing.Size(54, 17);
+            this.chkName.TabIndex = 7;
+            this.chkName.Text = "Name";
+            this.chkName.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1028, 649);
+            this.ClientSize = new System.Drawing.Size(1267, 649);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
@@ -544,7 +533,6 @@
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).EndInit();
@@ -568,9 +556,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgItems;
         private System.Windows.Forms.DataGridView dgCategory;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbJezik;
         private System.Windows.Forms.TextBox txtTags;
         public System.Windows.Forms.BindingSource bsItems;
         public System.Windows.Forms.BindingSource bsCategories;
@@ -600,5 +586,6 @@
         private System.Windows.Forms.ToolStripButton showImage;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton tsClipBoard;
+        private System.Windows.Forms.CheckBox chkName;
     }
 }

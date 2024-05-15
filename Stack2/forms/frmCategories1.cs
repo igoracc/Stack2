@@ -42,7 +42,7 @@ namespace Stack2.forms
 
             if (txtSearch.Text != "")
             {
-                query = query + " AND Items.Details LIKE '%" + txtSearch.Text + "%' ";
+                query = query + " AND Categories.Name LIKE '%" + txtSearch.Text + "%' ";
             }
 
 
@@ -95,6 +95,11 @@ namespace Stack2.forms
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            getCategories(LangID);
         }
     }
 }

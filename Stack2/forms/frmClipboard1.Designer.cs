@@ -56,6 +56,8 @@
             this.dgCategory.Name = "dgCategory";
             this.dgCategory.Size = new System.Drawing.Size(869, 310);
             this.dgCategory.TabIndex = 0;
+            this.dgCategory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCategory_CellClick);
+            this.dgCategory.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgCategory_DataError);
             this.dgCategory.SelectionChanged += new System.EventHandler(this.dgCategory_SelectionChanged);
             // 
             // bsCategories
@@ -117,7 +119,7 @@
             // Tekst
             // 
             this.Tekst.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tekst.DataPropertyName = "text";
+            this.Tekst.DataPropertyName = "Tekst";
             this.Tekst.HeaderText = "Tekst";
             this.Tekst.Name = "Tekst";
             // 
@@ -141,7 +143,7 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dgCategory);
             this.MinimizeBox = false;
-            ///this.Name = "frmClipboard1";
+           ///this.Name = "frmClipboard1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categories";
             this.Load += new System.EventHandler(this.frmCategories_Load);
@@ -163,9 +165,9 @@
         private System.Windows.Forms.BindingSource bsCategories;
         private System.Windows.Forms.TextBox txtDescriptions;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tekst;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.Label label1;
     }
 }

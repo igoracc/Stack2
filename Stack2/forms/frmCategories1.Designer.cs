@@ -132,6 +132,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Find";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmCategories
             // 
@@ -147,7 +148,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgCategory);
             this.MinimizeBox = false;
-            ///this.Name = "frmCategories";
+           // this.Name = "frmCategories";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categories";
             this.Load += new System.EventHandler(this.frmCategories_Load);

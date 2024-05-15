@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Stack2.forms
 {
@@ -33,7 +34,7 @@ namespace Stack2.forms
 
         private void getData()
         {
-            query = @" SELECT  id,datum,text,opis FROM [clipboard]   ";
+            query = @" SELECT  id,datum,text as Tekst,opis FROM [clipboard]   ";
 
  
             if (txtSearch.Text !="")
@@ -120,6 +121,22 @@ namespace Stack2.forms
         private void button1_Click(object sender, EventArgs e)
         {
             getData();
+        }
+
+        private void dgCategory_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;    
+        }
+
+        private void dgCategory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Check if a valid row index is clicked
+            {
+                DataGridViewRow row = dgCategory.Rows[e.RowIndex];
+                string text = row.Cells["Tekst"].Value.ToString(); // Replace "ColumnName" with the actual column name in your DataGridView
+                txtDescriptions.Text = text; // Display the text in the TextBox
+            }
+
         }
     }
 }

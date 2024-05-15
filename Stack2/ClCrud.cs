@@ -71,10 +71,6 @@ namespace Stack2
         }
 
 
-
-
-
-
     public void OpenConnection()
         {
 

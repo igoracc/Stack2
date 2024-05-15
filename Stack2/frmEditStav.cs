@@ -64,6 +64,7 @@ namespace Stack2
 
             if (modus != 4)
             {
+                txtDetails.Text = DateTime.Now.ToString() + "\n" + txtDetails.Text;
                 clCrud.AddEditItem(modus, CategoryId, LanguageID, txtName.Text, txtDetails.Text, txtTags.Text, txtHyperlink.Text, 0, ItemID);
             }
             else
@@ -90,6 +91,7 @@ namespace Stack2
             if (modus == 1)
             {
                 this.Text = "New item";
+               
             }
             else if (modus == 2)
             {
