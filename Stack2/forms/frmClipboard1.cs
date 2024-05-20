@@ -39,7 +39,7 @@ namespace Stack2.forms
  
             if (txtSearch.Text !="")
             {
-                query = query + " AND text LIKE '%" + txtSearch.Text + "%' ";
+                query = query + " WHERE  text LIKE '%" + txtSearch.Text + "%' ";
             }
 
             query += "  ORDER BY datum desc ";
@@ -94,9 +94,12 @@ namespace Stack2.forms
         {
             frmEditStav frm = new frmEditStav();
 
+            frm.modus = 1;
             frm.txtDetails.Text = txtDescriptions.Text;
             frm.ShowDialog();
 
+
+            // ovdje bi bilo dobro nekad napraviti vezu stavke i cpb elementa
 
 
         }
@@ -137,6 +140,25 @@ namespace Stack2.forms
                 txtDescriptions.Text = text; // Display the text in the TextBox
             }
 
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                getData();
+            }
+        }
+
+        private void frmClipboard1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Escape)
+                this.Close();
         }
     }
 }

@@ -46,6 +46,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.chkName = new System.Windows.Forms.CheckBox();
             this.btnCLipBoard = new System.Windows.Forms.Button();
             this.cbJezik = new System.Windows.Forms.ComboBox();
             this.chkAllWord = new System.Windows.Forms.CheckBox();
@@ -68,7 +69,7 @@
             this.bsCategories = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.chkName = new System.Windows.Forms.CheckBox();
+            this.Password = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -95,7 +96,8 @@
             this.showImage,
             this.tsBtnImage,
             this.toolStripSeparator3,
-            this.tsClipBoard});
+            this.tsClipBoard,
+            this.Password});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1267, 25);
@@ -193,8 +195,8 @@
             this.tsClipBoard.Image = ((System.Drawing.Image)(resources.GetObject("tsClipBoard.Image")));
             this.tsClipBoard.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsClipBoard.Name = "tsClipBoard";
-            this.tsClipBoard.Size = new System.Drawing.Size(79, 22);
-            this.tsClipBoard.Text = "Clipboard";
+            this.tsClipBoard.Size = new System.Drawing.Size(49, 22);
+            this.tsClipBoard.Text = "CPB";
             this.tsClipBoard.Click += new System.EventHandler(this.tsClipBoard_Click);
             // 
             // txtSearch
@@ -233,6 +235,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(867, 31);
             this.panel4.TabIndex = 6;
+            // 
+            // chkName
+            // 
+            this.chkName.AutoSize = true;
+            this.chkName.Checked = true;
+            this.chkName.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkName.Location = new System.Drawing.Point(13, 7);
+            this.chkName.Name = "chkName";
+            this.chkName.Size = new System.Drawing.Size(54, 17);
+            this.chkName.TabIndex = 7;
+            this.chkName.Text = "Name";
+            this.chkName.UseVisualStyleBackColor = true;
             // 
             // btnCLipBoard
             // 
@@ -363,7 +377,6 @@
             this.txtDetails.CurrentLineColor = System.Drawing.Color.Gainsboro;
             this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txtDetails.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.txtDetails.ForeColor = System.Drawing.Color.Yellow;
             this.txtDetails.IsReplaceMode = false;
             this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
@@ -502,17 +515,14 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // chkName
+            // Password
             // 
-            this.chkName.AutoSize = true;
-            this.chkName.Checked = true;
-            this.chkName.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkName.Location = new System.Drawing.Point(13, 7);
-            this.chkName.Name = "chkName";
-            this.chkName.Size = new System.Drawing.Size(54, 17);
-            this.chkName.TabIndex = 7;
-            this.chkName.Text = "Name";
-            this.chkName.UseVisualStyleBackColor = true;
+            this.Password.Image = ((System.Drawing.Image)(resources.GetObject("Password.Image")));
+            this.Password.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Password.Name = "Password";
+            this.Password.Size = new System.Drawing.Size(74, 22);
+            this.Password.Text = "PSWGEN";
+            this.Password.Click += new System.EventHandler(this.toolStripButton5_Click_1);
             // 
             // frmMain
             // 
@@ -527,6 +537,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stack 2";
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -587,5 +598,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton tsClipBoard;
         private System.Windows.Forms.CheckBox chkName;
+        private System.Windows.Forms.ToolStripButton Password;
     }
 }

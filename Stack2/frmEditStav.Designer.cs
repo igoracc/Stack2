@@ -46,17 +46,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtHyperlink = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtDetails = new FastColoredTextBoxNS.FastColoredTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtDetails = new FastColoredTextBoxNS.FastColoredTextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -227,6 +227,48 @@
             this.panel2.Size = new System.Drawing.Size(1037, 486);
             this.panel2.TabIndex = 2;
             // 
+            // txtDetails
+            // 
+            this.txtDetails.AutoCompleteBracketsList = new char[] {
+        '(',
+        ')',
+        '{',
+        '}',
+        '[',
+        ']',
+        '\"',
+        '\"',
+        '\'',
+        '\''};
+            this.txtDetails.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;=]+);\r\n^\\s*(case|default)\\s*[^:" +
+    "]*(?<range>:)\\s*(?<range>[^;]+);\r\n";
+            this.txtDetails.AutoScrollMinSize = new System.Drawing.Size(27, 14);
+            this.txtDetails.BackBrush = null;
+            this.txtDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(40)))));
+            this.txtDetails.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
+            this.txtDetails.CharHeight = 14;
+            this.txtDetails.CharWidth = 8;
+            this.txtDetails.CurrentLineColor = System.Drawing.Color.Gainsboro;
+            this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDetails.Font = new System.Drawing.Font("Courier New", 9.75F);
+            this.txtDetails.ForeColor = System.Drawing.Color.Yellow;
+            this.txtDetails.IsReplaceMode = false;
+            this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
+            this.txtDetails.LeftBracket = '(';
+            this.txtDetails.LeftBracket2 = '{';
+            this.txtDetails.Location = new System.Drawing.Point(0, 0);
+            this.txtDetails.Name = "txtDetails";
+            this.txtDetails.Paddings = new System.Windows.Forms.Padding(0);
+            this.txtDetails.RightBracket = ')';
+            this.txtDetails.RightBracket2 = '}';
+            this.txtDetails.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.txtDetails.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("txtDetails.ServiceColors")));
+            this.txtDetails.Size = new System.Drawing.Size(1037, 486);
+            this.txtDetails.TabIndex = 5;
+            this.txtDetails.Zoom = 100;
+            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -268,47 +310,6 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // txtDetails
-            // 
-            this.txtDetails.AutoCompleteBracketsList = new char[] {
-        '(',
-        ')',
-        '{',
-        '}',
-        '[',
-        ']',
-        '\"',
-        '\"',
-        '\'',
-        '\''};
-            this.txtDetails.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;=]+);\r\n^\\s*(case|default)\\s*[^:" +
-    "]*(?<range>:)\\s*(?<range>[^;]+);\r\n";
-            this.txtDetails.AutoScrollMinSize = new System.Drawing.Size(27, 14);
-            this.txtDetails.BackBrush = null;
-            this.txtDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(40)))));
-            this.txtDetails.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
-            this.txtDetails.CharHeight = 14;
-            this.txtDetails.CharWidth = 8;
-            this.txtDetails.CurrentLineColor = System.Drawing.Color.Gainsboro;
-            this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txtDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDetails.ForeColor = System.Drawing.Color.Yellow;
-            this.txtDetails.IsReplaceMode = false;
-            this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
-            this.txtDetails.LeftBracket = '(';
-            this.txtDetails.LeftBracket2 = '{';
-            this.txtDetails.Location = new System.Drawing.Point(0, 0);
-            this.txtDetails.Name = "txtDetails";
-            this.txtDetails.Paddings = new System.Windows.Forms.Padding(0);
-            this.txtDetails.RightBracket = ')';
-            this.txtDetails.RightBracket2 = '}';
-            this.txtDetails.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.txtDetails.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("txtDetails.ServiceColors")));
-            this.txtDetails.Size = new System.Drawing.Size(1037, 486);
-            this.txtDetails.TabIndex = 5;
-            this.txtDetails.Zoom = 100;
-            // 
             // frmEditStav
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,13 +325,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditStav";
             this.Load += new System.EventHandler(this.frmEditStav_Load_1);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmEditStav_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDetails)).EndInit();
             this.ResumeLayout(false);
 
         }

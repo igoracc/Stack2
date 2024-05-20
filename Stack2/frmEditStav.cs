@@ -264,6 +264,20 @@ namespace Stack2
                 txtDetails.Focus();
             }
         }
+
+        private void frmEditStav_KeyDown(object sender, KeyEventArgs e)
+        {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+
+                if(e.KeyCode == Keys.Control && e.KeyCode == Keys.S)
+                {
+                    button1_Click(this, e);
+                }
+
+        }
     }
 
 

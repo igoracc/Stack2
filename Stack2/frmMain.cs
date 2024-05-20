@@ -18,6 +18,7 @@ namespace Stack2
 {
 
 
+
     public partial class frmMain : Form
     {
         static ClCrud clCrud = new ClCrud();
@@ -438,7 +439,41 @@ namespace Stack2
 
         }
 
-        private void getItems(long CategoryID = 0,  long findID=0)
+        private void frmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+             
+        }
+
+        private static readonly string Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+        private static readonly Random random = new Random();
+
+        public static string GeneratePassword(int length)
+        {
+
+
+
+        StringBuilder password = new StringBuilder();
+
+
+            for (int i = 0; i < length; i++)
+            {
+                int index = random.Next(Chars.Length);
+                password.Append(Chars[index]);
+            }
+
+            return password.ToString();
+        }
+
+
+        private void toolStripButton5_Click_1(object sender, EventArgs e)
+        {
+            int passwordLength = 12; // Change this to your desired password length
+            string generatedPassword = GeneratePassword(passwordLength);
+
+            txtDetails.Text = generatedPassword;
+        }
+
+    private void getItems(long CategoryID = 0,  long findID=0)
         {
 
             if (chkDetails.Checked || chkAllWord.Checked)

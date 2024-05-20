@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgCategory = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tekst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsCategories = new System.Windows.Forms.BindingSource(this.components);
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtDescriptions = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tekst = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCategories)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,27 @@
             this.dgCategory.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgCategory_DataError);
             this.dgCategory.SelectionChanged += new System.EventHandler(this.dgCategory_SelectionChanged);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
+            // Tekst
+            // 
+            this.Tekst.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tekst.DataPropertyName = "Tekst";
+            this.Tekst.HeaderText = "Tekst";
+            this.Tekst.Name = "Tekst";
+            // 
+            // Name
+            // 
+            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Name.DataPropertyName = "datum";
+            this.Name.HeaderText = "Datum";
+            this.Name.Name = "Name";
+            // 
             // bsCategories
             // 
             this.bsCategories.CurrentChanged += new System.EventHandler(this.bsCategories_CurrentChanged);
@@ -70,6 +91,8 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(202, 20);
             this.txtSearch.TabIndex = 7;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // button1
             // 
@@ -109,27 +132,6 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Find";
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.Visible = false;
-            // 
-            // Tekst
-            // 
-            this.Tekst.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tekst.DataPropertyName = "Tekst";
-            this.Tekst.HeaderText = "Tekst";
-            this.Tekst.Name = "Tekst";
-            // 
-            // Name
-            // 
-            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Name.DataPropertyName = "datum";
-            this.Name.HeaderText = "Datum";
-            this.Name.Name = "Name";
-            // 
             // frmClipboard1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,6 +149,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categories";
             this.Load += new System.EventHandler(this.frmCategories_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmClipboard1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCategories)).EndInit();
             this.ResumeLayout(false);
