@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastColoredTextBoxNS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,9 @@ namespace Stack2.forms
 
         private void frmCategories_Load(object sender, EventArgs e)
         {
+
+            fillCBOLang();
+
             getCategories(LangID );
 
 
@@ -57,6 +61,21 @@ namespace Stack2.forms
         }
 
 
+        private void fillCBOLang()
+        {
+            string query = "";
+            query = " SELECT  naziv from ProgrammingLanguage ";
+
+            DataTable dt = new DataTable();
+            dt = clCrud.GetDataTableSQL(query);
+
+
+            cboLang.DataSource = dt;
+            cboLang.DisplayMember = "naziv";
+            cboLang.ValueMember = "naziv";
+
+            cboLang.SelectedValue = clCrud.ExecuteScalarSQL("SELECT naziv from ProgrammingLanguage WHERE ID =" + LangID);
+        }
         private long getCategoryID()
         {
 
@@ -82,6 +101,12 @@ namespace Stack2.forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
+
+            LangID = Convert.ToInt64(clCrud.ExecuteScalarSQL("  SELECT ID FROM ProgrammingLanguage WHERE naziv = '" + cboLang.Text + "'"));
+
+
+
 
             string cmdtext = "INSERT INTO Categories (Name,hidden, LanguageID) VALUES ('" + txtName.Text + "' , 0, "+ LangID + " )";
 

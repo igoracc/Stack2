@@ -40,6 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.cboLang = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCategories)).BeginInit();
             this.SuspendLayout();
@@ -52,9 +54,9 @@
             this.id,
             this.Name});
             this.dgCategory.DataSource = this.bsCategories;
-            this.dgCategory.Location = new System.Drawing.Point(12, 38);
+            this.dgCategory.Location = new System.Drawing.Point(12, 91);
             this.dgCategory.Name = "dgCategory";
-            this.dgCategory.Size = new System.Drawing.Size(541, 206);
+            this.dgCategory.Size = new System.Drawing.Size(541, 242);
             this.dgCategory.TabIndex = 0;
             this.dgCategory.SelectionChanged += new System.EventHandler(this.dgCategory_SelectionChanged);
             // 
@@ -74,7 +76,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(113, 312);
+            this.btnAdd.Location = new System.Drawing.Point(113, 401);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(150, 34);
             this.btnAdd.TabIndex = 1;
@@ -84,7 +86,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(281, 312);
+            this.button2.Location = new System.Drawing.Point(281, 401);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 34);
             this.button2.TabIndex = 2;
@@ -94,14 +96,14 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(113, 260);
+            this.txtName.Location = new System.Drawing.Point(113, 349);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(377, 20);
             this.txtName.TabIndex = 3;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(7, 260);
+            this.label1.Location = new System.Drawing.Point(7, 349);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 20);
             this.label1.TabIndex = 4;
@@ -134,11 +136,34 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cboLang
+            // 
+            this.cboLang.FormattingEnabled = true;
+            this.cboLang.Location = new System.Drawing.Point(113, 47);
+            this.cboLang.Name = "cboLang";
+            this.cboLang.Size = new System.Drawing.Size(165, 21);
+            this.cboLang.TabIndex = 12;
+            this.cboLang.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(22, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 20);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Language";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmCategories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 368);
+            this.ClientSize = new System.Drawing.Size(568, 455);
+            this.Controls.Add(this.cboLang);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtSearch);
@@ -148,7 +173,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgCategory);
             this.MinimizeBox = false;
-           // this.Name = "frmCategories";
+           ///'' this.Name = "frmCategories";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categories";
             this.Load += new System.EventHandler(this.frmCategories_Load);
@@ -172,5 +197,7 @@
         private System.Windows.Forms.BindingSource bsCategories;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.ComboBox cboLang;
+        private System.Windows.Forms.Label label4;
     }
 }

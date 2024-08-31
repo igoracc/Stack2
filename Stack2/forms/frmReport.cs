@@ -11,7 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Stack2.forms
 {
-    public partial class frmClipboard1 : Form
+    public partial class frmReport : Form
     {
         ClCrud clCrud = new ClCrud();
 
@@ -20,7 +20,7 @@ namespace Stack2.forms
 
         public long LangID ;
 
-        public frmClipboard1()
+        public frmReport()
         {
             InitializeComponent();
         }
@@ -67,7 +67,7 @@ namespace Stack2.forms
                 catch (Exception)
                 {
 
-                     throw;
+                    throw;
                 }
 
             }

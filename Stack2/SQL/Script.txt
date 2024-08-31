@@ -216,3 +216,14 @@ REFERENCES [dbo].[Items] ([ID])
 GO
 ALTER TABLE [dbo].[Documnets] NOCHECK CONSTRAINT [FK_DocumtItem]
 GO
+
+
+create table report (
+
+id bigint identity (1,1),
+tekst nvarchar(100) null,
+opis nvarchar(1000) null,
+datum date null,
+bimal smallint null,
+dorada smallint null
+)

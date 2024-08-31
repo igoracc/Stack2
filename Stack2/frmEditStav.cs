@@ -64,13 +64,24 @@ namespace Stack2
 
             if (modus != 4)
             {
-                txtDetails.Text = DateTime.Now.ToString() + "\n" + txtDetails.Text;
+                if (modus == 1)
+                {
+                    txtDetails.Text = DateTime.Now.ToString() + "\n" + txtDetails.Text; 
+                }
                 clCrud.AddEditItem(modus, CategoryId, LanguageID, txtName.Text, txtDetails.Text, txtTags.Text, txtHyperlink.Text, 0, ItemID);
+
+                if (modus == 1)
+                {
+                    ItemID =Convert.ToInt64(  clCrud.GetValue("MAX(ID)", "Items", "0", "0"));
+                }
+
             }
             else
             {
                 clCrud.AddEditItem(modus, CategoryId, LanguageID, txtName.Text, txtDetails.Text, txtTags.Text, txtHyperlink.Text, 0, ItemID, pictureBox1.Image);
             }
+
+
 
 
             this.Close();
@@ -224,7 +235,7 @@ namespace Stack2
 
             ///SELECT naziv from ProgrammingLanguage WHERE ID =
             ///
-            LanguageID = Convert.ToInt32( clCrud.GetValue("ID", "ProgrammingLanguage", "naziv", cboLang.Text, LanguageID));
+            LanguageID = Convert.ToInt32( clCrud.GetValue("ID", "ProgrammingLanguage", "naziv", cboLang.Text, LanguageID.ToString()));
 
             fillCBOCategory();
         }

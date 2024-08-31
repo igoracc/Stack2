@@ -362,7 +362,7 @@ namespace Stack2
         }
 
 
-        public object GetValue( string field, string table, string searchField, string searchValue, object defaultValue)
+        public object GetValue( string field, string table, string searchField, string searchValue, string defVal = "")
         {
             object OutVal = null;
 
@@ -374,7 +374,7 @@ namespace Stack2
             }
             catch (Exception)
             {
-                OutVal = defaultValue;
+                OutVal = defVal;
             }
 
             return OutVal;
