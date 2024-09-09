@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using static System.Net.WebRequestMethods;
 
 namespace Stack2
@@ -55,7 +56,7 @@ namespace Stack2
                 /// CategoryId = Convert.ToInt64( clCrud.ExecuteScalarSQL("INSERT"  );
 
                 MessageBox.Show("There is no category in selected");
-
+                return;
 
             }
 
@@ -135,14 +136,14 @@ namespace Stack2
             }
 
 
-                fillCBOLang();
+                fillCBOLang(LanguageID);
 
             fillCBOCategory();
 
         }
 
 
-        private void fillCBOLang ()
+        private void fillCBOLang (long lagnID)
         {
             string query = "";
             query = " SELECT  naziv from ProgrammingLanguage ";
@@ -155,7 +156,7 @@ namespace Stack2
             cboLang.DisplayMember = "naziv";
             cboLang.ValueMember = "naziv";
 
-            cboLang.SelectedValue = clCrud.ExecuteScalarSQL("SELECT naziv from ProgrammingLanguage WHERE ID =" + LanguageID);
+            cboLang.SelectedValue = clCrud.ExecuteScalarSQL("SELECT naziv from ProgrammingLanguage WHERE ID =" + lagnID);
         }
 
 

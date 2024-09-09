@@ -45,6 +45,61 @@ namespace Stack2
         }
 
 
+        public void WriteToRegistry(string subKey, string keyName, object valueData)
+        {
+            try
+            {
+                // Otvara ili kreira registar ključ pod HKEY_CURRENT_USER
+                RegistryKey key = Registry.CurrentUser.CreateSubKey(subKey);
+
+                if (key != null)
+                {
+                    // Postavlja vrednost u ključ
+                    key.SetValue(keyName, valueData);
+
+                    Console.WriteLine("Vrednost je uspešno upisana.");
+
+                    // Zatvara ključ
+                    key.Close();
+                }
+                else
+                {
+                    Console.WriteLine("Nije moguće kreirati ili otvoriti ključ.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Došlo je do greške: " + ex.Message);
+            }
+        }
+
+
+
+        public string ReadReg(string RegKeyName)
+        {
+            string valueOfKey = "";
+
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"IGIS");
+
+            //if it does exist, retrieve the stored values  
+            if (key != null)
+            {
+                try
+                {
+                    valueOfKey = key.GetValue(RegKeyName).ToString();
+                    key.Close();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+            }
+            return valueOfKey;
+
+        }
+
         public string ReadRegistry(string RegKeyName)
         {
             string valueOfKey = "";
@@ -69,6 +124,9 @@ namespace Stack2
             return valueOfKey;
 
         }
+
+
+
 
 
     public void OpenConnection()

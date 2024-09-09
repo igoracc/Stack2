@@ -43,12 +43,13 @@
             this.tsBtnImage = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsClipBoard = new System.Windows.Forms.ToolStripButton();
+            this.Password = new System.Windows.Forms.ToolStripButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.chkName = new System.Windows.Forms.CheckBox();
             this.btnCLipBoard = new System.Windows.Forms.Button();
-            this.cbJezik = new System.Windows.Forms.ComboBox();
+            this.cbLang = new System.Windows.Forms.ComboBox();
             this.chkAllWord = new System.Windows.Forms.CheckBox();
             this.chkDetails = new System.Windows.Forms.CheckBox();
             this.chkTags = new System.Windows.Forms.CheckBox();
@@ -69,7 +70,6 @@
             this.bsCategories = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Password = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -199,6 +199,15 @@
             this.tsClipBoard.Text = "CPB";
             this.tsClipBoard.Click += new System.EventHandler(this.tsClipBoard_Click);
             // 
+            // Password
+            // 
+            this.Password.Image = ((System.Drawing.Image)(resources.GetObject("Password.Image")));
+            this.Password.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Password.Name = "Password";
+            this.Password.Size = new System.Drawing.Size(74, 22);
+            this.Password.Text = "PSWGEN";
+            this.Password.Click += new System.EventHandler(this.toolStripButton5_Click_1);
+            // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(80, 11);
@@ -225,7 +234,7 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.chkName);
             this.panel4.Controls.Add(this.btnCLipBoard);
-            this.panel4.Controls.Add(this.cbJezik);
+            this.panel4.Controls.Add(this.cbLang);
             this.panel4.Controls.Add(this.chkAllWord);
             this.panel4.Controls.Add(this.chkDetails);
             this.panel4.Controls.Add(this.chkTags);
@@ -259,15 +268,15 @@
             this.btnCLipBoard.UseVisualStyleBackColor = true;
             this.btnCLipBoard.Click += new System.EventHandler(this.button2_Click);
             // 
-            // cbJezik
+            // cbLang
             // 
-            this.cbJezik.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbJezik.FormattingEnabled = true;
-            this.cbJezik.Location = new System.Drawing.Point(729, 5);
-            this.cbJezik.Name = "cbJezik";
-            this.cbJezik.Size = new System.Drawing.Size(123, 21);
-            this.cbJezik.TabIndex = 3;
-            this.cbJezik.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbLang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbLang.FormattingEnabled = true;
+            this.cbLang.Location = new System.Drawing.Point(729, 5);
+            this.cbLang.Name = "cbLang";
+            this.cbLang.Size = new System.Drawing.Size(123, 21);
+            this.cbLang.TabIndex = 3;
+            this.cbLang.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // chkAllWord
             // 
@@ -377,6 +386,7 @@
             this.txtDetails.CurrentLineColor = System.Drawing.Color.Gainsboro;
             this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtDetails.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.txtDetails.ForeColor = System.Drawing.Color.Yellow;
             this.txtDetails.IsReplaceMode = false;
             this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
@@ -515,15 +525,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Password
-            // 
-            this.Password.Image = ((System.Drawing.Image)(resources.GetObject("Password.Image")));
-            this.Password.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(74, 22);
-            this.Password.Text = "PSWGEN";
-            this.Password.Click += new System.EventHandler(this.toolStripButton5_Click_1);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -567,7 +568,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgItems;
         private System.Windows.Forms.DataGridView dgCategory;
-        private System.Windows.Forms.ComboBox cbJezik;
+        private System.Windows.Forms.ComboBox cbLang;
         private System.Windows.Forms.TextBox txtTags;
         public System.Windows.Forms.BindingSource bsItems;
         public System.Windows.Forms.BindingSource bsCategories;

@@ -37,11 +37,20 @@ namespace Stack2
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            long nlang = Convert.ToInt64(clCrud.ReadReg("Lang"));
+
+
+
             clCrud.OpenConnection();
 
             FillCOmbo();
 
-            getCategories(LangId);
+
+            cbLang.SelectedValue = clCrud.ExecuteScalarSQL("SELECT naziv from ProgrammingLanguage WHERE ID ="  + nlang +"");
+
+
+
+            getCategories(nlang);
 
             ItemId = GetItemId();
             fillDetailsAboutItem(ItemId);
@@ -61,9 +70,9 @@ namespace Stack2
             dt = clCrud.GetDataTableSQL(query);
 
 
-            cbJezik.DataSource = dt;
-            cbJezik.DisplayMember = "Naziv";
-            cbJezik.ValueMember = "Naziv";
+            cbLang.DataSource = dt;
+            cbLang.DisplayMember = "Naziv";
+            cbLang.ValueMember = "Naziv";
 
         }
 
@@ -255,9 +264,11 @@ namespace Stack2
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LangId = Convert.ToInt16(clCrud.ExecuteScalarSQL("SELECT ID FROM [ProgrammingLanguage] WHERE Naziv ='" + cbJezik.Text + "'"));
+            LangId = Convert.ToInt16(clCrud.ExecuteScalarSQL("SELECT ID FROM [ProgrammingLanguage] WHERE Naziv ='" + cbLang.Text + "'"));
             getCategories(LangId);
 
+            clCrud.WriteToRegistry("Igis","Lang", LangId);
+             
 
         }
 
