@@ -76,6 +76,12 @@
     <Compile Include="forms\frmImg.Designer.cs">
       <DependentUpon>frmImg.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\frmIzvjestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmIzvjestaj.Designer.cs">
+      <DependentUpon>frmIzvjestaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\mailsend.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmImg.resx">
       <DependentUpon>frmImg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmIzvjestaj.resx">
+      <DependentUpon>frmIzvjestaj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\mailsend.resx">
       <DependentUpon>mailsend.cs</DependentUpon>

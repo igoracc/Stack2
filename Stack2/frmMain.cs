@@ -1,4 +1,5 @@
-﻿using Stack2.forms;
+﻿using Izvjestaji;
+using Stack2.forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -488,6 +489,14 @@ namespace Stack2
         {
             mailsend mailsend = new mailsend(); 
             mailsend.ShowDialog();
+        }
+
+        private void Izvje_Click(object sender, EventArgs e)
+        {
+            frmIzvjestaj fr = new frmIzvjestaj();
+
+            fr.ShowDialog();
+
         }
 
         private void getItems(long CategoryID = 0,  long findID=0)
