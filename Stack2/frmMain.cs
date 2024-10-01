@@ -484,7 +484,13 @@ namespace Stack2
             txtDetails.Text = generatedPassword;
         }
 
-    private void getItems(long CategoryID = 0,  long findID=0)
+        private void toolStripButton4_Click_2(object sender, EventArgs e)
+        {
+            mailsend mailsend = new mailsend(); 
+            mailsend.ShowDialog();
+        }
+
+        private void getItems(long CategoryID = 0,  long findID=0)
         {
 
             if (chkDetails.Checked || chkAllWord.Checked)
