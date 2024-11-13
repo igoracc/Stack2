@@ -1,4 +1,5 @@
-﻿using Stack2.forms;
+﻿using Izvjestaji;
+using Stack2.forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,7 +84,7 @@ namespace Stack2
                       ,Categories.Name
 					  FROM Categories 
 					  LEFT JOIN Items ON Items.CategoryID = Categories.ID
-					  WHERE isnull(Categories.hidden,0)=0  AND isnull(Items.hidden,0)=0  AND Categories.LanguageID = " + LangId + " ";
+					  WHERE  ( Categories.LanguageID = " + LangId + " OR Multi = 1 )";
 
 
            /// query = @" SELECT  ID, Name, IsImage from Items WHERE Hidden =  0 AND CategoryID =  " + CategoryID;
@@ -484,7 +485,21 @@ namespace Stack2
             txtDetails.Text = generatedPassword;
         }
 
-    private void getItems(long CategoryID = 0,  long findID=0)
+        private void toolStripButton4_Click_2(object sender, EventArgs e)
+        {
+            mailsend mailsend = new mailsend(); 
+            mailsend.ShowDialog();
+        }
+
+        private void Izvje_Click(object sender, EventArgs e)
+        {
+            frmIzvjestaj fr = new frmIzvjestaj();
+
+            fr.ShowDialog();
+
+        }
+
+        private void getItems(long CategoryID = 0,  long findID=0)
         {
 
             if (chkDetails.Checked || chkAllWord.Checked)

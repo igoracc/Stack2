@@ -45,3 +45,42 @@ C:\Users\igor\OneDrive\PROGRAMING\OSTALE STAVKE\Documents\GitHub\Stack2\Stack2\o
 C:\Users\igor\OneDrive\PROGRAMING\OSTALE STAVKE\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack.csproj.CopyComplete
 C:\Users\igor\OneDrive\PROGRAMING\OSTALE STAVKE\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.exe
 C:\Users\igor\OneDrive\PROGRAMING\OSTALE STAVKE\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.pdb
+C:\Users\iml7603\Desktop\Stack2\Stack2\bin\Debug\Stack2.exe.config
+C:\Users\iml7603\Desktop\Stack2\Stack2\bin\Debug\Stack2.exe
+C:\Users\iml7603\Desktop\Stack2\Stack2\bin\Debug\Stack2.pdb
+C:\Users\iml7603\Desktop\Stack2\Stack2\obj\Debug\Stack.csproj.AssemblyReference.cache
+C:\Users\iml7603\Desktop\Stack2\Stack2\obj\Debug\Stack2.forms.frmClipboard1.resources
+C:\Users\iml7603\Desktop\Stack2\Stack2\obj\Debug\Stack2.forms.frmImage.resources
+C:\Users\iml7603\Desktop\Stack2\Stack2\obj\Debug\Stack2.forms.frmCategories.resources
+C:\Users\iml7603\Desktop\Stack2\Stack2\obj\Debug\Stack2.forms.frmImg.resources
+C:\Users\iml7603\Desktop\Stack2\Stack2\obj\Debug\Stack2.forms.mailsend.resources
+C:\Users\iml7603\Desktop\Stack2\Stack2\obj\Debug\Stack2.frmEditStav.resources
+C:\Users\iml7603\Desktop\Stack2\Stack2\obj\Debug\Stack2.frmLogin.resources
+C:\Users\iml7603\Desktop\Stack2\Stack2\obj\Debug\Stack2.frmMain.resources
+C:\Users\iml7603\Desktop\Stack2\Stack2\obj\Debug\Stack2.Properties.Resources.resources
+C:\Users\iml7603\Desktop\Stack2\Stack2\obj\Debug\Stack.csproj.GenerateResource.cache
+C:\Users\iml7603\Desktop\Stack2\Stack2\obj\Debug\Stack.csproj.CoreCompileInputs.cache
+C:\Users\iml7603\Desktop\Stack2\Stack2\obj\Debug\Stack.csproj.Up2Date
+C:\Users\iml7603\Desktop\Stack2\Stack2\obj\Debug\Stack2.exe
+C:\Users\iml7603\Desktop\Stack2\Stack2\obj\Debug\Stack2.pdb
+C:\Users\igor\Desktop\Stack2\Stack2\bin\Debug\Stack2.exe.config
+C:\Users\igor\Desktop\Stack2\Stack2\bin\Debug\Stack2.exe
+C:\Users\igor\Desktop\Stack2\Stack2\bin\Debug\Stack2.pdb
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Stack.csproj.AssemblyReference.cache
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Stack2.forms.frmClipboard1.resources
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Stack2.forms.frmImage.resources
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Stack2.forms.frmCategories.resources
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Stack2.forms.frmImg.resources
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Izvjestaji.frmIzvjestaj.resources
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Stack2.forms.mailsend.resources
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Stack2.frmEditStav.resources
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Stack2.frmLogin.resources
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Stack2.frmMain.resources
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Stack2.Properties.Resources.resources
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Stack.csproj.GenerateResource.cache
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Stack.csproj.CoreCompileInputs.cache
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Stack.csproj.CopyComplete
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Stack2.exe
+C:\Users\igor\Desktop\Stack2\Stack2\obj\Debug\Stack2.pdb
+C:\Users\igor\OneDrive\PROGRAMING\OSTALE STAVKE\Documents\GitHub\Stack2\Stack2\obj\Debug\Izvjestaji.frmIzvjestaj.resources
+C:\Users\igor\OneDrive\PROGRAMING\OSTALE STAVKE\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.forms.mailsend.resources

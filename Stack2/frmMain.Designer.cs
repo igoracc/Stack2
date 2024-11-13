@@ -43,6 +43,7 @@
             this.tsBtnImage = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsClipBoard = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.Password = new System.Windows.Forms.ToolStripButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -70,6 +71,7 @@
             this.bsCategories = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Izvje = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -84,6 +86,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton3,
             this.toolStripButton2,
@@ -97,10 +100,12 @@
             this.tsBtnImage,
             this.toolStripSeparator3,
             this.tsClipBoard,
+            this.toolStripButton4,
+            this.Izvje,
             this.Password});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1267, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1267, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -109,7 +114,7 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(49, 22);
+            this.toolStripButton3.Size = new System.Drawing.Size(53, 24);
             this.toolStripButton3.Text = "Add";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
@@ -118,7 +123,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(47, 22);
+            this.toolStripButton2.Size = new System.Drawing.Size(51, 24);
             this.toolStripButton2.Text = "Edit";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -127,20 +132,20 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(60, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(64, 24);
             this.toolStripButton1.Text = "Delete";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // btnSave
             // 
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(65, 22);
+            this.btnSave.Size = new System.Drawing.Size(69, 24);
             this.btnSave.Text = "Update";
             this.btnSave.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
@@ -149,7 +154,7 @@
             this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(78, 22);
+            this.toolStripButton6.Size = new System.Drawing.Size(82, 24);
             this.toolStripButton6.Text = "Open link";
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
@@ -158,21 +163,21 @@
             this.categories.Image = ((System.Drawing.Image)(resources.GetObject("categories.Image")));
             this.categories.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.categories.Name = "categories";
-            this.categories.Size = new System.Drawing.Size(83, 22);
+            this.categories.Size = new System.Drawing.Size(87, 24);
             this.categories.Text = "Categories";
             this.categories.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // showImage
             // 
             this.showImage.Image = ((System.Drawing.Image)(resources.GetObject("showImage.Image")));
             this.showImage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.showImage.Name = "showImage";
-            this.showImage.Size = new System.Drawing.Size(88, 22);
+            this.showImage.Size = new System.Drawing.Size(92, 24);
             this.showImage.Text = "View Image";
             this.showImage.Click += new System.EventHandler(this.toolStripButton4_Click_1);
             // 
@@ -181,30 +186,39 @@
             this.tsBtnImage.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnImage.Image")));
             this.tsBtnImage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnImage.Name = "tsBtnImage";
-            this.tsBtnImage.Size = new System.Drawing.Size(92, 22);
+            this.tsBtnImage.Size = new System.Drawing.Size(96, 24);
             this.tsBtnImage.Text = "Insert Image";
             this.tsBtnImage.Click += new System.EventHandler(this.tsBtnImage_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
             // 
             // tsClipBoard
             // 
             this.tsClipBoard.Image = ((System.Drawing.Image)(resources.GetObject("tsClipBoard.Image")));
             this.tsClipBoard.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsClipBoard.Name = "tsClipBoard";
-            this.tsClipBoard.Size = new System.Drawing.Size(49, 22);
+            this.tsClipBoard.Size = new System.Drawing.Size(53, 24);
             this.tsClipBoard.Text = "CPB";
             this.tsClipBoard.Click += new System.EventHandler(this.tsClipBoard_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(80, 24);
+            this.toolStripButton4.Text = "MailSend";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click_2);
             // 
             // Password
             // 
             this.Password.Image = ((System.Drawing.Image)(resources.GetObject("Password.Image")));
             this.Password.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(74, 22);
+            this.Password.Size = new System.Drawing.Size(78, 24);
             this.Password.Text = "PSWGEN";
             this.Password.Click += new System.EventHandler(this.toolStripButton5_Click_1);
             // 
@@ -439,15 +453,18 @@
             // 
             this.ID1.DataPropertyName = "id";
             this.ID1.HeaderText = "ID";
+            this.ID1.MinimumWidth = 6;
             this.ID1.Name = "ID1";
             this.ID1.ReadOnly = true;
             this.ID1.Visible = false;
+            this.ID1.Width = 125;
             // 
             // ItemName
             // 
             this.ItemName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ItemName.DataPropertyName = "Name";
             this.ItemName.HeaderText = "Name";
+            this.ItemName.MinimumWidth = 6;
             this.ItemName.Name = "ItemName";
             this.ItemName.ReadOnly = true;
             // 
@@ -455,9 +472,11 @@
             // 
             this.img.DataPropertyName = "isImage";
             this.img.HeaderText = "IsImage";
+            this.img.MinimumWidth = 6;
             this.img.Name = "img";
             this.img.ReadOnly = true;
             this.img.Visible = false;
+            this.img.Width = 125;
             // 
             // bsItems
             // 
@@ -490,15 +509,18 @@
             // 
             this.id.DataPropertyName = "Id";
             this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Visible = false;
+            this.id.Width = 125;
             // 
             // Nam
             // 
             this.Nam.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Nam.DataPropertyName = "Name";
             this.Nam.HeaderText = "Name";
+            this.Nam.MinimumWidth = 6;
             this.Nam.Name = "Nam";
             this.Nam.ReadOnly = true;
             // 
@@ -524,6 +546,15 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // Izvje
+            // 
+            this.Izvje.Image = ((System.Drawing.Image)(resources.GetObject("Izvje.Image")));
+            this.Izvje.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Izvje.Name = "Izvje";
+            this.Izvje.Size = new System.Drawing.Size(72, 24);
+            this.Izvje.Text = "Izvještaj";
+            this.Izvje.Click += new System.EventHandler(this.Izvje_Click);
             // 
             // frmMain
             // 
@@ -600,5 +631,7 @@
         private System.Windows.Forms.ToolStripButton tsClipBoard;
         private System.Windows.Forms.CheckBox chkName;
         private System.Windows.Forms.ToolStripButton Password;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton Izvje;
     }
 }

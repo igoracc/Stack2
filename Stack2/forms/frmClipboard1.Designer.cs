@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClipboard1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgCategory = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tekst = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsCategories = new System.Windows.Forms.BindingSource(this.components);
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -42,6 +42,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.txtDescriptions = new FastColoredTextBoxNS.FastColoredTextBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tekst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCategories)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -57,42 +60,23 @@
             this.Tekst,
             this.Name});
             this.dgCategory.DataSource = this.bsCategories;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgCategory.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgCategory.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgCategory.Location = new System.Drawing.Point(0, 54);
             this.dgCategory.Name = "dgCategory";
-            this.dgCategory.Size = new System.Drawing.Size(1018, 294);
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgCategory.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgCategory.Size = new System.Drawing.Size(1166, 294);
             this.dgCategory.TabIndex = 0;
             this.dgCategory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCategory_CellClick);
             this.dgCategory.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgCategory_DataError);
             this.dgCategory.SelectionChanged += new System.EventHandler(this.dgCategory_SelectionChanged);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.Visible = false;
-            // 
-            // Tekst
-            // 
-            this.Tekst.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tekst.DataPropertyName = "Tekst";
-            this.Tekst.HeaderText = "Tekst";
-            this.Tekst.Name = "Tekst";
-            // 
-            // Name
-            // 
-            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Name.DataPropertyName = "datum";
-            this.Name.HeaderText = "Datum";
-            this.Name.Name = "Name";
             // 
             // bsCategories
             // 
@@ -132,7 +116,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1018, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1166, 25);
             this.toolStrip1.TabIndex = 13;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -181,16 +165,41 @@
             this.txtDescriptions.RightBracket2 = '}';
             this.txtDescriptions.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.txtDescriptions.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("txtDescriptions.ServiceColors")));
-            this.txtDescriptions.Size = new System.Drawing.Size(1018, 318);
+            this.txtDescriptions.Size = new System.Drawing.Size(1166, 365);
             this.txtDescriptions.TabIndex = 14;
             this.txtDescriptions.Zoom = 100;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
+            // Tekst
+            // 
+            this.Tekst.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tekst.DataPropertyName = "Tekst";
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Tekst.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Tekst.HeaderText = "Tekst";
+            this.Tekst.Name = "Tekst";
+            // 
+            // Name
+            // 
+            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Name.DataPropertyName = "datum";
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Name.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Name.HeaderText = "Datum";
+            this.Name.Name = "Name";
             // 
             // frmClipboard1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1018, 672);
+            this.ClientSize = new System.Drawing.Size(1166, 718);
             this.Controls.Add(this.txtDescriptions);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label1);
@@ -198,7 +207,7 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dgCategory);
             this.MinimizeBox = false;
-            ///''this.Name = "frmClipboard1";
+            
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Saved CPB";
             this.Load += new System.EventHandler(this.frmCategories_Load);
@@ -223,11 +232,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource bsCategories;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tekst;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         public FastColoredTextBoxNS.FastColoredTextBox txtDescriptions;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tekst;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
     }
 }
