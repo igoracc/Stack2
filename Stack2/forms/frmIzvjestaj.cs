@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Izvjestaji
 {
@@ -265,8 +267,16 @@ namespace Izvjestaji
                                "WHEN Tip = 2 THEN 'Dorada' " +
                                "WHEN Tip = 3 THEN 'Edukacija' " +
                                "ELSE 'N/A' END AS TipOpis " +
-                               "FROM Izvjestaj WHERE CAST(Datum AS DATE) = @SelectedDate " +
-                               "ORDER BY Datum DESC, ID DESC";
+                               "FROM Izvjestaj ";
+                               
+                               
+                if (checkBox1.Checked == true)
+                {
+                    query = query + "WHERE CAST(Datum AS DATE) = @SelectedDate ";
+                }
+
+                query = query + "ORDER BY Datum DESC, ID DESC";
+
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -290,6 +300,43 @@ namespace Izvjestaji
             }
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            FilterDataByDate(dtFilter.Value);
+        }
 
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked ==true)
+            {
+                timer1.Enabled = true;  
+
+            }else
+            {
+                timer1.Enabled=false;
+            }
+
+
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            try
+            {
+                textBox1.Text = Clipboard.GetText();
+            }
+            catch (Exception)
+            {
+
+                ///throw;
+            }
+
+
+
+
+
+        }
     }
 }

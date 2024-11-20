@@ -62,6 +62,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
             this.label2.Location = new System.Drawing.Point(-27, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 17);
@@ -80,6 +81,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(-27, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 17);
@@ -99,6 +101,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(100)))));
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.dtDateCreated);
             this.panel1.Controls.Add(this.btnGetImage);
@@ -111,12 +114,13 @@
             this.panel1.Controls.Add(this.txtTags);
             this.panel1.Location = new System.Drawing.Point(0, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1050, 101);
+            this.panel1.Size = new System.Drawing.Size(1090, 101);
             this.panel1.TabIndex = 0;
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
             this.label6.Location = new System.Drawing.Point(199, 19);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 17);
@@ -151,7 +155,7 @@
             this.panel4.Controls.Add(this.cboCategory);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(746, 13);
+            this.panel4.Location = new System.Drawing.Point(786, 13);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(292, 65);
             this.panel4.TabIndex = 14;
@@ -174,12 +178,13 @@
             this.cboCategory.Size = new System.Drawing.Size(165, 21);
             this.cboCategory.TabIndex = 12;
             this.cboCategory.TabStop = false;
+           // this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.cboCategory_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
             this.label4.Location = new System.Drawing.Point(33, 4);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 20);
@@ -191,7 +196,7 @@
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
             this.label5.Location = new System.Drawing.Point(33, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 20);
@@ -202,6 +207,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
             this.label3.Location = new System.Drawing.Point(-27, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 17);
@@ -224,7 +230,7 @@
             this.panel2.Controls.Add(this.txtDetails);
             this.panel2.Location = new System.Drawing.Point(12, 119);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1037, 486);
+            this.panel2.Size = new System.Drawing.Size(1077, 526);
             this.panel2.TabIndex = 2;
             // 
             // txtDetails
@@ -252,7 +258,6 @@
             this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.txtDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDetails.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.txtDetails.ForeColor = System.Drawing.Color.Yellow;
             this.txtDetails.IsReplaceMode = false;
             this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
@@ -265,7 +270,7 @@
             this.txtDetails.RightBracket2 = '}';
             this.txtDetails.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.txtDetails.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("txtDetails.ServiceColors")));
-            this.txtDetails.Size = new System.Drawing.Size(1037, 486);
+            this.txtDetails.Size = new System.Drawing.Size(1077, 526);
             this.txtDetails.TabIndex = 5;
             this.txtDetails.Zoom = 100;
             // 
@@ -273,12 +278,12 @@
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(100)))));
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.button1);
-            this.panel3.Location = new System.Drawing.Point(0, 611);
+            this.panel3.Location = new System.Drawing.Point(0, 651);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1061, 48);
+            this.panel3.Size = new System.Drawing.Size(1101, 48);
             this.panel3.TabIndex = 3;
             // 
             // button2
@@ -315,7 +320,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1050, 659);
+            this.ClientSize = new System.Drawing.Size(1090, 699);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

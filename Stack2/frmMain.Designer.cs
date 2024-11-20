@@ -44,6 +44,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsClipBoard = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.Izvje = new System.Windows.Forms.ToolStripButton();
             this.Password = new System.Windows.Forms.ToolStripButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -71,7 +72,7 @@
             this.bsCategories = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Izvje = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -86,6 +87,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(190)))));
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton3,
@@ -102,10 +104,11 @@
             this.tsClipBoard,
             this.toolStripButton4,
             this.Izvje,
-            this.Password});
+            this.Password,
+            this.toolStripSeparator4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1267, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1309, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -120,6 +123,7 @@
             // 
             // toolStripButton2
             // 
+            this.toolStripButton2.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
@@ -129,6 +133,7 @@
             // 
             // toolStripButton1
             // 
+            this.toolStripButton1.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
@@ -142,6 +147,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSave.Name = "btnSave";
@@ -151,6 +157,7 @@
             // 
             // toolStripButton6
             // 
+            this.toolStripButton6.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
@@ -160,6 +167,7 @@
             // 
             // categories
             // 
+            this.categories.ForeColor = System.Drawing.SystemColors.Control;
             this.categories.Image = ((System.Drawing.Image)(resources.GetObject("categories.Image")));
             this.categories.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.categories.Name = "categories";
@@ -174,6 +182,7 @@
             // 
             // showImage
             // 
+            this.showImage.ForeColor = System.Drawing.SystemColors.Control;
             this.showImage.Image = ((System.Drawing.Image)(resources.GetObject("showImage.Image")));
             this.showImage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.showImage.Name = "showImage";
@@ -183,6 +192,7 @@
             // 
             // tsBtnImage
             // 
+            this.tsBtnImage.ForeColor = System.Drawing.SystemColors.Control;
             this.tsBtnImage.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnImage.Image")));
             this.tsBtnImage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnImage.Name = "tsBtnImage";
@@ -197,6 +207,7 @@
             // 
             // tsClipBoard
             // 
+            this.tsClipBoard.ForeColor = System.Drawing.SystemColors.Control;
             this.tsClipBoard.Image = ((System.Drawing.Image)(resources.GetObject("tsClipBoard.Image")));
             this.tsClipBoard.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsClipBoard.Name = "tsClipBoard";
@@ -206,6 +217,7 @@
             // 
             // toolStripButton4
             // 
+            this.toolStripButton4.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
@@ -213,8 +225,19 @@
             this.toolStripButton4.Text = "MailSend";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click_2);
             // 
+            // Izvje
+            // 
+            this.Izvje.ForeColor = System.Drawing.SystemColors.Control;
+            this.Izvje.Image = ((System.Drawing.Image)(resources.GetObject("Izvje.Image")));
+            this.Izvje.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Izvje.Name = "Izvje";
+            this.Izvje.Size = new System.Drawing.Size(72, 24);
+            this.Izvje.Text = "Izvještaj";
+            this.Izvje.Click += new System.EventHandler(this.Izvje_Click);
+            // 
             // Password
             // 
+            this.Password.ForeColor = System.Drawing.SystemColors.Control;
             this.Password.Image = ((System.Drawing.Image)(resources.GetObject("Password.Image")));
             this.Password.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Password.Name = "Password";
@@ -234,12 +257,13 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(100)))));
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1267, 39);
+            this.panel1.Size = new System.Drawing.Size(1309, 39);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -264,6 +288,7 @@
             this.chkName.AutoSize = true;
             this.chkName.Checked = true;
             this.chkName.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.chkName.Location = new System.Drawing.Point(13, 7);
             this.chkName.Name = "chkName";
             this.chkName.Size = new System.Drawing.Size(54, 17);
@@ -295,6 +320,7 @@
             // chkAllWord
             // 
             this.chkAllWord.AutoSize = true;
+            this.chkAllWord.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.chkAllWord.Location = new System.Drawing.Point(193, 7);
             this.chkAllWord.Name = "chkAllWord";
             this.chkAllWord.Size = new System.Drawing.Size(68, 17);
@@ -305,6 +331,7 @@
             // chkDetails
             // 
             this.chkDetails.AutoSize = true;
+            this.chkDetails.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.chkDetails.Location = new System.Drawing.Point(129, 7);
             this.chkDetails.Name = "chkDetails";
             this.chkDetails.Size = new System.Drawing.Size(58, 17);
@@ -315,6 +342,7 @@
             // chkTags
             // 
             this.chkTags.AutoSize = true;
+            this.chkTags.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.chkTags.Location = new System.Drawing.Point(73, 7);
             this.chkTags.Name = "chkTags";
             this.chkTags.Size = new System.Drawing.Size(50, 17);
@@ -326,6 +354,7 @@
             // 
             this.rbDate.AutoSize = true;
             this.rbDate.Checked = true;
+            this.rbDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rbDate.Location = new System.Drawing.Point(404, 7);
             this.rbDate.Name = "rbDate";
             this.rbDate.Size = new System.Drawing.Size(48, 17);
@@ -338,6 +367,7 @@
             // rbAsc
             // 
             this.rbAsc.AutoSize = true;
+            this.rbAsc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rbAsc.Location = new System.Drawing.Point(352, 7);
             this.rbAsc.Name = "rbAsc";
             this.rbAsc.Size = new System.Drawing.Size(46, 17);
@@ -370,7 +400,7 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(0, 73);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1267, 578);
+            this.panel2.Size = new System.Drawing.Size(1309, 578);
             this.panel2.TabIndex = 3;
             // 
             // txtDetails
@@ -400,7 +430,6 @@
             this.txtDetails.CurrentLineColor = System.Drawing.Color.Gainsboro;
             this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txtDetails.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.txtDetails.ForeColor = System.Drawing.Color.Yellow;
             this.txtDetails.IsReplaceMode = false;
             this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
@@ -413,7 +442,7 @@
             this.txtDetails.RightBracket2 = '}';
             this.txtDetails.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.txtDetails.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("txtDetails.ServiceColors")));
-            this.txtDetails.Size = new System.Drawing.Size(903, 546);
+            this.txtDetails.Size = new System.Drawing.Size(945, 546);
             this.txtDetails.TabIndex = 4;
             this.txtDetails.Zoom = 100;
             this.txtDetails.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDetails_KeyDown);
@@ -424,7 +453,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTags.Location = new System.Drawing.Point(361, 555);
             this.txtTags.Name = "txtTags";
-            this.txtTags.Size = new System.Drawing.Size(903, 20);
+            this.txtTags.Size = new System.Drawing.Size(945, 20);
             this.txtTags.TabIndex = 3;
             // 
             // dgItems
@@ -537,7 +566,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(361, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(903, 546);
+            this.pictureBox1.Size = new System.Drawing.Size(945, 546);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -547,21 +576,17 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Izvje
+            // toolStripSeparator4
             // 
-            this.Izvje.Image = ((System.Drawing.Image)(resources.GetObject("Izvje.Image")));
-            this.Izvje.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Izvje.Name = "Izvje";
-            this.Izvje.Size = new System.Drawing.Size(72, 24);
-            this.Izvje.Text = "Izvještaj";
-            this.Izvje.Click += new System.EventHandler(this.Izvje_Click);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1267, 649);
+            this.ClientSize = new System.Drawing.Size(1309, 649);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
@@ -633,5 +658,6 @@
         private System.Windows.Forms.ToolStripButton Password;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton Izvje;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }
