@@ -163,7 +163,8 @@ namespace Stack2
         private void fillCBOCategory()
         {
             string query = "";
-            query = " SELECT  name from Categories where Hidden = 0 AND LanguageID = " + LanguageID + " order by name ";
+            query = " SELECT  name from Categories where Hidden = 0 AND ( LanguageID = " + LanguageID + " OR Multi = 1 ) order by name ";
+
 
             DataTable dt = new DataTable();
             dt = clCrud.GetDataTableSQL(query);
@@ -291,6 +292,13 @@ namespace Stack2
 
         }
 
+        private void txtDetails_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Control && e.KeyCode == Keys.S)
+            {
+                button1_Click(this, e);
+            }
+        }
     }
 
 

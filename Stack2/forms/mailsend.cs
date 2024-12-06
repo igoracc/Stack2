@@ -30,7 +30,7 @@ namespace Stack2.forms
             string to = textBox1.Text; // Zamijenite s pravom e-mail adresom
             string from = "imeltransfer2@gmail.com"; // Zamijenite s pravom e-mail adresom
             string subject =textBox3.Text;
-            string body = textBoxEmailBody.Text; // Uzimanje teksta iz TextBox-a
+            string body = textBoxEmailBody.Text ; // Uzimanje teksta iz TextBox-a
 
             try
             {
@@ -47,6 +47,23 @@ namespace Stack2.forms
             {
                 MessageBox.Show("Greška prilikom slanja e-maila: " + ex.Message);
             }
+        }
+
+        private void mailsend_Load(object sender, EventArgs e)
+        {
+
+            try
+            {
+                textBoxEmailBody.Text = Clipboard.GetText();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+
         }
     }
 }

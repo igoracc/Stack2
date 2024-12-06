@@ -178,7 +178,6 @@
             this.cboCategory.Size = new System.Drawing.Size(165, 21);
             this.cboCategory.TabIndex = 12;
             this.cboCategory.TabStop = false;
-           // this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.cboCategory_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -258,6 +257,7 @@
             this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.txtDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDetails.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.txtDetails.ForeColor = System.Drawing.Color.Yellow;
             this.txtDetails.IsReplaceMode = false;
             this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
@@ -273,6 +273,7 @@
             this.txtDetails.Size = new System.Drawing.Size(1077, 526);
             this.txtDetails.TabIndex = 5;
             this.txtDetails.Zoom = 100;
+            this.txtDetails.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDetails_KeyDown_1);
             // 
             // panel3
             // 

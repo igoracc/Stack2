@@ -18,3 +18,6 @@ C:\Users\igor\OneDrive\PROGRAMING\OSTALE STAVKE\Documents\GitHub\Stack2\Stack2\o
 C:\Users\igor\OneDrive\PROGRAMING\OSTALE STAVKE\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack.csproj.CopyComplete
 C:\Users\igor\OneDrive\PROGRAMING\OSTALE STAVKE\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.exe
 C:\Users\igor\OneDrive\PROGRAMING\OSTALE STAVKE\Documents\GitHub\Stack2\Stack2\obj\Debug\Stack2.pdb
+C:\Users\iml7603\Desktop\Stack2-main\Stack2\obj\Debug\Stack.csproj.AssemblyReference.cache
+C:\Users\iml7603\Desktop\Stack2-main\Stack2\obj\Debug\Stack2.exe
+C:\Users\iml7603\Desktop\Stack2-main\Stack2\obj\Debug\Stack2.pdb
