@@ -34,7 +34,7 @@ namespace Stack2.forms
 
         private void getData()
         {
-            query = @" SELECT  id,datum,text as Tekst,opis FROM [clipboard]   ";
+            query = @" SELECT  TOP 50 id,datum,text as Tekst,opis FROM [clipboard]   ";
 
  
             if (txtSearch.Text !="")

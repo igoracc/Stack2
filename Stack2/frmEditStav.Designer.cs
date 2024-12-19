@@ -74,7 +74,7 @@
             // 
             this.txtName.Location = new System.Drawing.Point(79, 19);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(112, 20);
+            this.txtName.Size = new System.Drawing.Size(166, 20);
             this.txtName.TabIndex = 0;
             this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
             // 
@@ -93,7 +93,7 @@
             // 
             this.txtTags.Location = new System.Drawing.Point(79, 45);
             this.txtTags.Name = "txtTags";
-            this.txtTags.Size = new System.Drawing.Size(402, 20);
+            this.txtTags.Size = new System.Drawing.Size(440, 20);
             this.txtTags.TabIndex = 1;
             this.txtTags.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTags_KeyDown);
             // 
@@ -121,7 +121,7 @@
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(199, 19);
+            this.label6.Location = new System.Drawing.Point(237, 19);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 17);
             this.label6.TabIndex = 18;
@@ -130,7 +130,7 @@
             // 
             // dtDateCreated
             // 
-            this.dtDateCreated.Location = new System.Drawing.Point(281, 17);
+            this.dtDateCreated.Location = new System.Drawing.Point(319, 17);
             this.dtDateCreated.Name = "dtDateCreated";
             this.dtDateCreated.Size = new System.Drawing.Size(200, 20);
             this.dtDateCreated.TabIndex = 17;
@@ -218,7 +218,7 @@
             // 
             this.txtHyperlink.Location = new System.Drawing.Point(79, 71);
             this.txtHyperlink.Name = "txtHyperlink";
-            this.txtHyperlink.Size = new System.Drawing.Size(402, 20);
+            this.txtHyperlink.Size = new System.Drawing.Size(440, 20);
             this.txtHyperlink.TabIndex = 2;
             // 
             // panel2
@@ -257,7 +257,6 @@
             this.txtDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDetails.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.txtDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDetails.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.txtDetails.ForeColor = System.Drawing.Color.Yellow;
             this.txtDetails.IsReplaceMode = false;
             this.txtDetails.Language = FastColoredTextBoxNS.Language.CSharp;
@@ -312,7 +311,7 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.MenuBar;
             this.pictureBox1.Location = new System.Drawing.Point(0, 119);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(970, 452);
+            this.pictureBox1.Size = new System.Drawing.Size(1090, 523);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 

@@ -51,6 +51,8 @@ namespace Izvjestaji
 
             FilterDataByDate(dtFilter.Value);
 
+            checkBox2.Checked = true;
+
         }
 
         private void LoadData()
@@ -234,6 +236,7 @@ namespace Izvjestaji
         {
 
             textBox1.Text = Clipboard.GetText();    
+            numericUpDown1.Focus();
 
         }
 
@@ -268,12 +271,19 @@ namespace Izvjestaji
                                "WHEN Tip = 3 THEN 'Edukacija' " +
                                "ELSE 'N/A' END AS TipOpis " +
                                "FROM Izvjestaj ";
-                               
-                               
+
+
                 if (checkBox1.Checked == true)
                 {
                     query = query + "WHERE CAST(Datum AS DATE) = @SelectedDate ";
                 }
+                else if (checkBox2.Checked == true)
+                {
+                    query = query + "WHERE CAST(Datum AS DATE) >= @SelectedDate AND CAST(Datum AS DATE) <= @SelectedDate2 "; 
+                }
+
+
+
 
                 query = query + "ORDER BY Datum DESC, ID DESC";
 
@@ -281,6 +291,12 @@ namespace Izvjestaji
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@SelectedDate", selectedDate.Date);
+
+                    if (checkBox2.Checked == true)
+                    {
+                        command.Parameters.AddWithValue("@SelectedDate2", dtDoDatuma.Value);
+                    }
+
                     adapter.SelectCommand = command;  // Postavi upit za adapter
                     adapter.Fill(dataTable);  // Učitaj podatke
                 }
@@ -298,6 +314,10 @@ namespace Izvjestaji
                     connection.Close();
                 }
             }
+
+
+            CalculateTotalHours();
+
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -320,6 +340,30 @@ namespace Izvjestaji
 
         }
 
+
+
+        private void CalculateTotalHours()
+        {
+            int totalHours = 0;
+
+            // Pretpostavljamo da je dataGridView1 tvoj DataGrid
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                // Proveri da li je red validan (nije novi red)
+                if (row.Cells["Vrijeme"].Value != null)
+                {
+                    // Proverimo da li je vrednost integer
+                    if (int.TryParse(row.Cells["Vrijeme"].Value.ToString(), out int hoursValue))
+                    {
+                        totalHours += hoursValue; // Saberi sate
+                    }
+                }
+            }
+
+            // Prikazuj zbir u numUkupno
+            numUkupno.Value = totalHours; // Postavi vrednost u NumericUpDown
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
 
@@ -336,6 +380,12 @@ namespace Izvjestaji
 
 
 
+
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            FilterDataByDate(dtFilter.Value);
 
         }
     }

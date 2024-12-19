@@ -281,6 +281,8 @@ namespace Stack2
             fr.CategoryId = categoryID;
             fr.modus = 1;
 
+            ///fr.txtDetails.Text = Clipboard.GetText();
+
             fr.ShowDialog();
 
             getItems(categoryID);
@@ -479,7 +481,7 @@ namespace Stack2
 
         private void toolStripButton5_Click_1(object sender, EventArgs e)
         {
-            int passwordLength = 12; // Change this to your desired password length
+            int passwordLength = 15; // Change this to your desired password length
             string generatedPassword = GeneratePassword(passwordLength);
 
             txtDetails.Text = generatedPassword;
@@ -504,10 +506,26 @@ namespace Stack2
 
         }
 
+        private void toolStripButton5_Click_3(object sender, EventArgs e)
+        {
+            frmEditStav fr = new frmEditStav();
+
+            fr.LanguageID = LangId;
+            fr.CategoryId = categoryID;
+            fr.modus = 1;
+
+            fr.txtDetails.Text = Clipboard.GetText();
+
+            fr.ShowDialog();
+
+            getItems(categoryID);
+
+        }
+
         private void getItems(long CategoryID = 0,  long findID=0)
         {
 
-            if (chkDetails.Checked || chkAllWord.Checked)
+            if (chkDetails.Checked || chkAllWord.Checked )
             {
                 if(fillStart == false)
                 {
